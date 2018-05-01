@@ -1,0 +1,134 @@
+
+    .form-control::placeholder, .form-control::-moz-placeholder {
+        color: #6c757d;
+        opacity: 1;
+    }
+
+    .square-container .input-group .form-control {
+        border: 0;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #989898;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 500;
+        height: 36px;
+    }
+
+
+    .form-control {
+      display: block;
+      width: 100%;
+      color: #878787;
+      background-color: #FFF;
+      border: 2px solid #ebebeb;
+      border-radius: 0;
+    }
+
+    .square-container .input-group {
+      border-bottom: 2px solid #3f3f3f;
+      padding: 6px 0;
+    }
+
+    .square-container .form-group {
+      margin: 0;
+    }
+
+
+
+    .inline [class*="col-"] {
+      padding: 0;
+    }
+
+
+
+
+
+
+.btn-primary {
+    color: #FFF;
+    background-color: #2cc185;
+    border-color: #2cc185;
+}
+
+.btn {
+    font-weight: 400;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .15rem;
+}
+
+ .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(0,255,123,.5);
+}
+
+.btn-primary:active {
+    color: #fff;
+    background-color: #00cc62;
+    border-color: #005cbf;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #00d969;
+    border-color: #0062cc;
+}
+
+
+
+.sign-up-form .sign-up-submit {
+    padding: 1.5rem 0rem 1.15rem;
+}
+
+.square-container .input-group-prepend .icon {
+    font-size: 20px;
+    color: #2cc185;
+    padding-top: 1px;
+    margin: auto;
+}
+
+.square-container .input-group-prepend {
+    padding: .6rem .9rem;
+    min-width: 3.8rem;
+    font-size: 1.2rem;
+    margin-right: 0;
+}
+
+.form-message {
+ display:flex;
+ flex-direction:column;
+ padding:60px 30px 40px;
+ background-color:#383838;
+ color:#d4d4d4
+}
+
+.user-message {
+ display:flex;
+ flex-direction:column;
+ background-color:#2cc185;
+ color:#FFF;
+ padding:155px 30px 40px;
+ font-size: 22px;
+}
+
+.square-container .square-text {
+  font-size: 20px;
+}
+
+.alternative-message{
+    font-size: 14px;
+}
+
+.alternative-message a{
+    color: #00ffca;
+}
+
+.alternative-message a:hover, .alternative-message a:focus{
+    color: #00afaa;
+    text-decoration: none;
+}
+
+.alternative-message a:active{
+
+}
