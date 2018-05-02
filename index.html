@@ -9,18 +9,25 @@
   <meta name="author" content="">
   <title>SB Admin - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS-->
+  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <link href="vendor/FullCalendar/fullcalendar.css" rel="stylesheet">
+
+
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
 
  
 
   <style type="text/css">
-
+.container{
+  background-color: initial;
+}
   .navbar-dark .navbar-nav .nav-link {
     color: rgba(255,255,255,.8);
   }
@@ -88,6 +95,19 @@
 #mainNav.fixed-top.navbar-dark .sidenav-toggler {
   background-color: #283233;
 }
+
+.fc-event, .fc-event-dot {
+  background-color: rgba(2,216,117,0.4);
+}
+.fc-title{
+  color: #444444;  
+}
+
+.fc-event {
+  padding-left: 4px;
+  border: 1px solid #337b61;
+}
+
   </style>
 
 </head>
@@ -232,7 +252,9 @@
 
   </nav>
   <div class="content-wrapper">     
-      
+      <!-- nifty modal modals -->
+
+   
     <div class="container-fluid">
         
       <!-- Breadcrumbs-->
@@ -243,7 +265,7 @@
         <li class="breadcrumb-item active" id="active-tab">Principal</li>
       </ol>
       <!-- Icon Cards-->
-      <div class="row">
+      <div class="row" style="display: none">
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
@@ -312,490 +334,23 @@
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-area-chart"></i> Area Chart Example</div>
+          <i class="fa fa-area-chart"></i> Empleados en cursos</div>
         <div class="card-body">
           <canvas id="myAreaChart" width="100%" height="30"></canvas>
         </div>
-        <div class="card-footer small text-muted" id="part-emp-chart-date">Updated yesterday at 11:59 PM</div>
+        <div class="card-footer small text-muted" id="part-emp-chart-date"></div>
       </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <!-- Example Bar Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-8 my-auto">
-                  <canvas id="myBarChart" width="100" height="50"></canvas>
-                </div>
-                <div class="col-sm-4 text-center my-auto">
-                  <div class="h4 mb-0 text-primary">$34,693</div>
-                  <div class="small text-muted">YTD Revenue</div>
-                  <hr>
-                  <div class="h4 mb-0 text-warning">$18,474</div>
-                  <div class="small text-muted">YTD Expenses</div>
-                  <hr>
-                  <div class="h4 mb-0 text-success">$16,219</div>
-                  <div class="small text-muted">YTD Margin</div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-          <!-- Card Columns Example Social Feed-->
-          <div class="mb-0 mt-4">
-            <i class="fa fa-newspaper-o"></i> News Feed</div>
-          <hr class="mt-2">
-          <div class="card-columns">
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">David Miller</a></h6>
-                <p class="card-text small">These waves are looking pretty good today!
-                  <a href="#">#surfsup</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <hr class="my-0">
-              <div class="card-body small bg-faded">
-                <div class="media">
-                  <img class="d-flex mr-3" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <h6 class="mt-0 mb-1"><a href="#">John Smith</a></h6>Very nice! I wish I was there! That looks amazing!
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item">
-                        <a href="#">Like</a>
-                      </li>
-                      <li class="list-inline-item">·</li>
-                      <li class="list-inline-item">
-                        <a href="#">Reply</a>
-                      </li>
-                    </ul>
-                    <div class="media mt-3">
-                      <a class="d-flex pr-3" href="#">
-                        <img src="http://placehold.it/45x45" alt="">
-                      </a>
-                      <div class="media-body">
-                        <h6 class="mt-0 mb-1"><a href="#">David Miller</a></h6>Next time for sure!
-                        <ul class="list-inline mb-0">
-                          <li class="list-inline-item">
-                            <a href="#">Like</a>
-                          </li>
-                          <li class="list-inline-item">·</li>
-                          <li class="list-inline-item">
-                            <a href="#">Reply</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=180" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">John Smith</a></h6>
-                <p class="card-text small">Another day at the office...
-                  <a href="#">#workinghardorhardlyworking</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <hr class="my-0">
-              <div class="card-body small bg-faded">
-                <div class="media">
-                  <img class="d-flex mr-3" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <h6 class="mt-0 mb-1"><a href="#">Jessy Lucas</a></h6>Where did you get that camera?! I want one!
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item">
-                        <a href="#">Like</a>
-                      </li>
-                      <li class="list-inline-item">·</li>
-                      <li class="list-inline-item">
-                        <a href="#">Reply</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer small text-muted">Posted 46 mins ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div>
-            <div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div><div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">Jeffery Wellings</a></h6>
-                <p class="card-text small">Nice shot from the skate park!
-                  <a href="#">#kickflip</a>
-                  <a href="#">#holdmybeer</a>
-                  <a href="#">#igotthis</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <div class="card-footer small text-muted">Posted 1 hr ago</div>
-            </div>
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-              <a href="#">
-                <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=185" alt="">
-              </a>
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">David Miller</a></h6>
-                <p class="card-text small">It's hot, and I might be lost...
-                  <a href="#">#desert</a>
-                  <a href="#">#water</a>
-                  <a href="#">#anyonehavesomewater</a>
-                  <a href="#">#noreally</a>
-                  <a href="#">#thirsty</a>
-                  <a href="#">#dehydration</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
-              </div>
-              <hr class="my-0">
-              <div class="card-body small bg-faded">
-                <div class="media">
-                  <img class="d-flex mr-3" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <h6 class="mt-0 mb-1"><a href="#">John Smith</a></h6>The oasis is a mile that way, or is that just a mirage?
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item">
-                        <a href="#">Like</a>
-                      </li>
-                      <li class="list-inline-item">·</li>
-                      <li class="list-inline-item">
-                        <a href="#">Reply</a>
-                      </li>
-                    </ul>
-                    <div class="media mt-3">
-                      <a class="d-flex pr-3" href="#">
-                        <img src="http://placehold.it/45x45" alt="">
-                      </a>
-                      <div class="media-body">
-                        <h6 class="mt-0 mb-1"><a href="#">David Miller</a></h6>
-                        <img class="img-fluid w-100 mb-1" src="https://unsplash.it/700/450?image=789" alt="">I'm saved, I found a cactus. How do I open this thing?
-                        <ul class="list-inline mb-0">
-                          <li class="list-inline-item">
-                            <a href="#">Like</a>
-                          </li>
-                          <li class="list-inline-item">·</li>
-                          <li class="list-inline-item">
-                            <a href="#">Reply</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer small text-muted">Posted yesterday</div>
-            </div>
-          </div>
-          <!-- /Card Columns-->
+
+      <!-- Calendar -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-calendar"></i> Planeador de Cursos</div>
+        <div class="card-body">
+          <div id="calendar" width="100%"></div>
         </div>
-        <div class="col-lg-4">
-          <!-- Example Pie Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-            <div class="card-body">
-              <canvas id="myPieChart" width="100%" height="100"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-          <!-- Example Notifications Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bell-o"></i> Feed Example</div>
-            <div class="list-group list-group-flush small">
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>David Miller</strong>posted a new article to
-                    <strong>David Miller Website</strong>.
-                    <div class="text-muted smaller">Today at 5:43 PM - 5m ago</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>Samantha King</strong>sent you a new message!
-                    <div class="text-muted smaller">Today at 4:37 PM - 1hr ago</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>Jeffery Wellings</strong>added a new photo to the album
-                    <strong>Beach</strong>.
-                    <div class="text-muted smaller">Today at 4:31 PM - 1hr ago</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <i class="fa fa-code-fork"></i>
-                    <strong>Monica Dennis</strong>forked the
-                    <strong>startbootstrap-sb-admin</strong>repository on
-                    <strong>GitHub</strong>.
-                    <div class="text-muted smaller">Today at 3:54 PM - 2hrs ago</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">View all activity...</a>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-        </div>
+        <div class="card-footer small text-muted"></div>
       </div>
+
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
@@ -805,22 +360,22 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Nombre</th>
+                  <th>Posicion</th>
+                  <th>Oficina</th>
+                  <th>Edad</th>
+                  <th>Fecha de registro</th>
+                  <th>Salario</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Nombre</th>
+                  <th>Posicion</th>
+                  <th>Oficina</th>
+                  <th>Edad</th>
+                  <th>Fecha de registro</th>
+                  <th>Salario</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -1005,7 +560,7 @@
             </table>
           </div>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        <div class="card-footer small text-muted">Actualizado hoy a las 10:50 AM</div>
       </div>
     </div>
     <!-- /.container-fluid-->
@@ -1013,7 +568,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © WorkClass 2018</small>
         </div>
       </div>
     </footer>
@@ -1049,14 +604,95 @@
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
  
+    <!-- Moment and FullCalendar Plugins -->
+
+    <script src="vendor/moment/moment.js"></script>
+    <script src="vendor/FullCalendar/fullcalendar.js"></script>
+    <script src='vendor/fullcalendar/locale/es.js'></script>
+
+    <script src='vendor/nifty-modal/nifty.js'></script>
+
+    <script type="text/javascript">
+      
+      $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        select: function(start, end) {
+          if(start.isBefore( moment() )) {
+              $('#calendar').fullCalendar('unselect');
+              return false;
+          }
+        }, 
+        dayClick: function(date) {
+          if(!date.isBefore(moment()) || date.isSame(moment(), 'day') ){
+            //alert('a day has been clicked!');
+            
+          $('#modal-1').nifty('show');//({backdrop: 'static', keyboard: false});
+
+            var myevent =   {
+              title  : 'event2',
+              start  : date,
+              nombre: "asdf"
+          }
+            $('#calendar').fullCalendar( 'renderEvent', myevent, true);
+          }
+        },
+
+        events: [
+          {
+              title  : 'Curso de integracion de interfaces dinamicas',
+              start  : '2018-05-02',
+          },
+          {
+              title  : 'Curso 2',
+              start  : '2018-05-05'
+          },
+          {
+              title  : 'Curso 3',
+              start  : '2018-05-09T12:30:00',
+              allDay : false // will make the time show
+          }
+        ],
+        eventClick: function(calEvent, jsEvent, view) {
+
+          alert('Event: ' + calEvent.title);
+          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+          alert('View: ' + view.name);
+
+          if(calEvent.nombre!=null){
+            alert(calEvent.nombre);
+          }
+
+        }
+      })
+
+    </script>
+
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>
+    <script src="js/sb-admin-charts.js"></script>
    
   </div>
 
+   <div class="nifty-modal md-effect-1" style="z-index: 90002" id="modal-1">
+      <div class="md-content">
+        <div class='md-title'>
+          <h3>Modal Dialog</h3>
+        </div>
+        <div class='md-body'>
+          <p>This is a modal window. You can do the following things with it:</p>
+          <ul>
+            <li><strong>Read:</strong> Modal windows will probably tell you something important so don't forget to read what it says.</li>
+            <li><strong>Look:</strong> modal windows enjoy a certain kind of attention; just look at it and appreciate its presence.</li>
+            <li><strong>Close:</strong> click on the button below to close the modal.</li>
+          </ul>
+          <button class="btn btn-primary md-close">Close me!</button>
+        </div>
+      </div>
+    </div>
+    <div class="md-overlay" style="z-index: 90000"></div>
+  
 </body>
 
 </html>
