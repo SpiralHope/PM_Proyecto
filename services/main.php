@@ -1,8 +1,13 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
     mb_internal_encoding("UTF-8");
 
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
+    //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
 
     error_reporting(E_ERROR | E_PARSE);
 
@@ -34,7 +39,13 @@
     $DB_DATABASE = "workclas_Test"; //id1564859_news
 
     
+    $DB_HOST = "localhost:3307"; //localhost
 
+    $DB_USERNAME = "root"; //id1564859_root
+
+    $DB_PASSWORD = "root";
+
+    $DB_DATABASE = "pm_sql"; //id1564859_news
     
 
 
@@ -61,7 +72,7 @@
             if(!$this->is_connected){
 
                 $reportLevel = error_reporting();
-                error_reporting(0);
+                //error_reporting(0);
                 $tryToConnect = false;
                 $try = 0;
                 $max = 6;
@@ -121,7 +132,7 @@
                 unset($this->connection);
                 $this->connection = true;
                 $this->connection = null;
-                $this->is_connected ) false;
+                $this->is_connected = false;
             }
         }
 
@@ -193,7 +204,7 @@
             $this->db_database = $GLOBALS["DB_DATABASE"];
 
 
-            $this->already_connected = false;
+            $this->is_connected = false;
 
             $this->query = null;
             $this->result = null;
@@ -228,7 +239,7 @@
         function __invoke($query, $values = null, $dataType = null){
 
             $reportLevel = error_reporting();
-            error_reporting(0);
+           // error_reporting(0);
 
             if($this->connect()){
 
@@ -582,7 +593,7 @@
             return $file;
         }
 
-    }
+    };
 
     $_SQL = new Connection();
     $_OPEN = false;
@@ -591,6 +602,7 @@
     if(isset($_SESSION["email"]) || isset($_SESSION["open"])){
         $GLOBALS["_OPEN"] = true;
     }
-    
+
+    print("asdasd");
 
 ?>

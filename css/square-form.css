@@ -13,7 +13,8 @@
         padding: 0;
         font-size: 14px;
         font-weight: 500;
-        height: 36px;
+        height: 40px;
+        padding-right: 10px;
     }
 
 
@@ -77,7 +78,11 @@
     border-color: #3cba89;
 }
 
-
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #FFF;
+    background-color: #167941;
+    border-color: #167941;
+}
 
 .sign-up-form .sign-up-submit {
     padding: 1.5rem 0rem 1.15rem;
@@ -133,4 +138,13 @@
 
 .alternative-message a:active{
 
+}
+input{
+    transition: color 1.0s  ease-out;
+    color: #6c757d !important;
+
+}
+.has-error input{
+    transition: color 1.0s  ease-out;
+    color: #de4444 !important;
 }

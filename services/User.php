@@ -1,21 +1,10 @@
 <?php
   	include_once('variable.php');
+?>
+<?php
 
 
-  	class Session{
-  		function obtenerDatosSession(){
-
-  		}
-  		function usuarioLogeado(){
-
-  		}
-
-  		function obtenerTipoUsuario(){
-
-  		}
-  	};
-
-	class Empleado{
+  	class Empleado{
 
 	  	/*
 			0 = fallo;
@@ -24,7 +13,11 @@
 	  	*/
 	  	function loginEmpleado($email, $password){
 	  		if(isset($email) && isset($password)){
-	  			$_SQL("CALL login(?, ?)", [$email, sha1($password)], "ss");
+    			
+				$_SQL =  $GLOBALS["_SQL"] ;
+
+	  			$_SQL("CALL login(?, ?)", [ $email, sha1($password) ], "ss");
+	  			//print ($_SQL->countRows());
 	  			if($_SQL->countRows() > 0)
 				{
 					session_unset();
@@ -41,7 +34,7 @@
 			    	$this->logoutUser();
 			        return 0;
 				}
-		 	}	
+		 	}else return 0;
 	  	}
 
 	  	function logoutUser(){
@@ -49,24 +42,27 @@
 	        session_destroy();
 	  	}
 
-	  	function registroEmpresa($datos, $auto_login){
-  		 	foreach ($datos as $i){
+	  	function registroEmpresa($datos, $auto_login = true){
+  		 
+
+		    if(!isset($datos["nombre"], $datos["apellido"], $datos["email"], $datos["password"], $datos["tipo_plan"]) ){
+		         return false;
+		    }
+
+	    	foreach ($datos as $i){
 		        if($i == ""){
 		        	return false;
 		        }
 		    }
 
-		    if(!isset($userData["m_nombre"], $userData["m_correo"], $userData["m_password"], $userData["m_tipo_plan"])){
-		         return false;
-		    }
-
-		    $sha1Password = sha1($userData["password"]);
-
-			$_SQL("CALL registroEmpresa(?, ?, ?, ?)", [$userData["m_nombre"], $userData["m_correo"], $sha1Password, $userData["m_tipo_plan"] ], "sssi");
+		    $sha1Password = sha1($datos["password"]);
+		
+			$_SQL =  $GLOBALS["_SQL"] ;
+			$_SQL("CALL registroEmpresa(?, ?, ?, ?, ?)", [$datos["nombre"],$datos["apellido"], $datos["email"], $sha1Password, $datos["tipo_plan"] ], "ssssi");
 		    $row = $_SQL->getRow(1);
 		    if ($row["completado"] == 1){
 		    	if($auto_login)
-		    		this->loginEmpleado([$userData["m_nombre"], $userData["m_password"] ]);
+		    		$this->loginEmpleado($datos["email"], $datos["password"] );
 		    	return true;
 		    }
 		    else{
@@ -75,7 +71,7 @@
 
 	  	}
 	  	
-
+/*
 	  	function createUser($userData){
 
 		    if(!$_SQL->validateFile("photo")){
@@ -105,7 +101,7 @@
 
 	  	}
 
-
-	}
+*/
+	};
 
 ?>

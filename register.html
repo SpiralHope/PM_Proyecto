@@ -1,69 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-</head>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    
+    <title>Classwork</title>
 
-<body class="bg-dark">
-  <div class="container">
-    <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Register an Account</div>
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputName">First name</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
-              </div>
-              <div class="col-md-6">
-                <label for="exampleInputLastName">Last name</label>
-                <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
-              </div>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- <link type="text/css" href="css/test/app.css" rel="stylesheet">   -->
+    <link href="css/square-form.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      
+    </style>
+  </head>
+    <body id="mainContainer">
+     <div class="main-content container">
+
+      <div class="row centerContainer">
+  
+
+        <div class="square-container col-md-12 col-lg-10 offset-lg-1 row">
+          <div class="col-md-6 form-message">
+            <div class="text-center">
+              <img src="img/WorkClass-Logo.png" alt="logo" height="128" class="logo-img mb-4">
             </div>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputPassword1">Password</label>
-                <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+            <span class="square-text text-center mt-4 mb-4">Registrate</span>
+            <form id="login-form" class="sign-up-form" data-toggle="validator" role="form">
+              <div class="form-group inline row">
+                <div class="col-sm-6">
+                  <div class="form-group input-group">
+                    <div class="input-group-prepend"><i class="icon fa fa-user-circle"></i></div>
+                    <input type="text" placeholder="Nombre" autocomplete="off" name="nombre" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group input-group">
+                    <input  type="text" placeholder="Apellido" autocomplete="off" name="apellido" class="form-control" required>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6">
-                <label for="exampleConfirmPassword">Confirm password</label>
-                <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><i class="icon fa fa-envelope"></i></div>
+                  <input type="email" placeholder="Correo" autocomplete="off" name="email" class="form-control" required>
+                </div>
               </div>
-            </div>
+              <div class="form-group inline row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-prepend"><i class="icon fa fa-lock"></i></div>
+                    <input id="inputPassword" type="password" placeholder="Contraseña" name="password" data-minlength="6" autocomplete="off" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-prepend"><i class="icon fa fa-lock"></i></div>
+                    <input type="password" placeholder="Confirmar"  autocomplete="off" class="form-control" data-match="#inputPassword" required>
+                  </div>
+                </div>
+
+              </div>
+              <div class="form-group sign-up-submit">
+                <button data-dismiss="modal" type="submit" class="btn btn-lg btn-primary btn-block">Registro</button>
+              </div>
+            </form>
+            <span class="alternative-message text-right">¿Ya estas registrado? <a href="pages-sign-up.php">Ingresa</a></span>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
-        </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="login.html">Login Page</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          <div class="col-md-6 user-message hidden-sm-down"><span class="login-message text-left">Bienvenido a<br> WorkClass<br></span></div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-</body>
 
+</div>
+    </div>
+<!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/validator/validator.js"></script>
+
+    <script type="text/javascript">
+
+      var rootUrl = "";
+      $(document).ready(function() {
+
+        $('#login-form').validator().on('submit', function (e) {
+
+          if (e.isDefaultPrevented()) {
+            // handle the invalid form...
+                    alert("Introduzca todos los datos");
+
+          } else {
+            e.preventDefault();
+            var formData = new FormData($("#login-form")[0]);
+              formData.append("tipo_plan", '1');
+              var url = rootUrl + "services/registerService.php"
+              $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                data: formData, //$("#login-form").serialize(), // serializes the form's elements.
+                 success: function(data)
+                 {
+                  if(data.success === true){
+                     window.location.replace(rootUrl + "index.php");
+                  }else{
+                    alert("Credenciales erroneas");
+                    console.log(data);
+                  }
+                     //alert(data); // show response from the php script.
+                 },
+                 error: function(data){
+
+                 }
+              }).fail(function( jqXHR, textStatus, errorThrown ) {
+                   if(console && console.log){
+                    console.log(errorThrown);
+                    console.log(textStatus);
+                    
+                   }
+                });
+
+            // everything looks good!
+          }
+        })
+      
+
+    });
+      
+    </script>
+
+  </body>
 </html>

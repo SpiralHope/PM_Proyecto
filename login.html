@@ -1,132 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
-  
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-
-</head>
-
-
-
-<body class="bg-dark">
-  <div class="container">
-
-<div class="card card-login mx-auto mt-5">
-      <div class="card-header text-center">ClassWork</div>
-      <div class="card-body">
-
-
-
-
-  <form style ="display:none" data-toggle="validator" role="form">
-            <div class="form-group">
-              <label for="inputName" class="control-label">Name</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Cina Saffary" required>
-            </div>
-          <div class="form-group has-feedback">
-            <label for="inputTwitter" class="control-label">Twitter</label>
-            <div class="input-group">
-              <span class="input-group-addon">@</span>
-              <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="inputTwitter" placeholder="1000hz" required>
-            </div>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <div class="help-block with-errors">Hey look, this one has feedback icons!</div>
-          </div>
-          <div class="form-group">
-            <label for="inputEmail" class="control-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
-            <div class="help-block with-errors"></div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword" class="control-label">Password</label>
-            <div class="form-inline row">
-              <div class="form-group col-sm-6">
-                <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
-                <div class="help-block">Minimum of 6 characters</div>
-              </div>
-              <div class="form-group col-sm-6">
-                <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
-                <div class="help-block with-errors"></div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="radio">
-              <label>
-                <input type="radio" name="underwear" required>
-                Boxers
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="underwear" required>
-                Briefs
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
-                Check yourself
-              </label>
-              <div class="help-block with-errors"></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-    </form>
-
-
-
-        <form data-toggle="validator" role="form">
-          <div class="form-group">
-            <label for="InputEmailLogin">Correo</label>
-            <input class="form-control" id="InputEmailLogin" type="email" name="" aria-describedby="emailHelp" placeholder="Ingresa Correo" required>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Contraseña" required>
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Recordar Usuario</label>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="#">Ingresar</a>
-        </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Registrar una Cuenta</a>
-          <a class="d-block small" href="forgot-password.html">Olvido Contraseña?</a>
-        </div>
-      </div>
-    </div>
-
-
-
-
+    <link rel="shortcut icon" href="assets/img/favicon.png">
     
-  </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-</body>
+    <title>Classwork</title>
 
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- <link type="text/css" href="css/test/app.css" rel="stylesheet">   -->
+    <link href="css/square-form.css" rel="stylesheet" type="text/css">
+
+  </head>
+    <body id="mainContainer">
+     <div class="main-content container">
+
+      <div class="row centerContainer">
+  
+
+        <div class="square-container col-md-12 col-lg-10 offset-lg-1 row">
+          <div class="col-md-6 user-message"><span class="login-message text-right">Bienvenido a<br> WorkClass<br></span></div>
+
+
+          <div class="col-md-6 form-message">
+             <div class="text-center">
+              <img src="img/WorkClass-Logo.png" alt="logo" height="128" class="logo-img mb-4">
+            </div>
+            <span class="square-text text-center mt-4 mb-4">Ingresar</span>
+            <form id="login-form" class="sign-up-form" data-toggle="validator" role="form">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><i class="icon fa fa-envelope"></i></div>
+                  <input id="correo" type="email" placeholder="Correo" autocomplete="off" name="email"  class="form-control" data-error="Por favor introduzca un correo valido" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend"><i class="icon fa fa-lock"></i></div>
+                    <input id="pass1" type="password" placeholder="Contraseña" name="password" class="form-control" required>
+                  </div>
+              </div>
+              <div class="form-group sign-up-submit">
+                <button type="submit" class="btn btn-lg btn-primary btn-block" id="ingBtt">Ingresar</button>
+              </div>
+            </form>
+            <span class="alternative-message text-right">¿No tienes una cuenta? <a href="pages-sign-up.php">Registrate</a></span>
+            <span class="alternative-message text-right">¿Olvidaste tu contraseña? <a href="pages-sign-up.php">Entra aqui</a></span>
+          </div>
+        </div>
+
+      </div>
+
+
+      </div>
+<!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/validator/validator.js"></script>
+
+    <script type="text/javascript">
+
+      var rootUrl = "";
+      $(document).ready(function() {
+        $('#login-form').on('submit', function(e){
+                    e.preventDefault();
+ var formData = new FormData($("#login-form")[0]);
+              var url = rootUrl + "services/loginService.php"
+              $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                data: formData, //$("#login-form").serialize(), // serializes the form's elements.
+                 success: function(data)
+                 {
+                  if(data.success === true){
+                     window.location.replace(rootUrl + "index.php");
+                  }else{
+                    alert("Credenciales erroneas");
+                    console.log(data);
+                  }
+                     //alert(data); // show response from the php script.
+                 },
+                 error: function(data){
+
+                 }
+              }).fail(function( jqXHR, textStatus, errorThrown ) {
+                   if(console && console.log){
+                    console.log(errorThrown);
+                    console.log(textStatus);
+                    
+                   }
+                });
+
+        });
+
+    });
+      
+    </script>
+
+  </body>
 </html>
