@@ -48,8 +48,8 @@
 
 .btn-primary {
     color: #FFF;
-    background-color: #2cc185;
-    border-color: #2cc185;
+    background-color: #369971;
+    border-color: #369971;
 }
 
 .btn {
@@ -60,19 +60,21 @@
 }
 
  .btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(0,255,123,.5);
+    box-shadow: 0 0 0 .2rem rgba(0,190,123,.5) !important;
+     background-color: #0e6b4d !important;
+    border-color: #0e6b4d !important;
 }
 
 .btn-primary:active {
     color: #fff;
-    background-color: #00cc62;
-    border-color: #005cbf;
+    background-color: #0e6b4d !important;
+    border-color: #0e6b4d !important;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #00d969;
-    border-color: #0062cc;
+    background-color: #3cba89;
+    border-color: #3cba89;
 }
 
 
@@ -83,7 +85,7 @@
 
 .square-container .input-group-prepend .icon {
     font-size: 20px;
-    color: #2cc185;
+    color: #369971;
     padding-top: 1px;
     margin: auto;
 }
@@ -99,14 +101,14 @@
  display:flex;
  flex-direction:column;
  padding:60px 30px 40px;
- background-color:#383838;
+ background-color:#283233;
  color:#d4d4d4
 }
 
 .user-message {
  display:flex;
  flex-direction:column;
- background-color:#2cc185;
+ background-color:#369971;
  color:#FFF;
  padding:155px 30px 40px;
  font-size: 22px;
