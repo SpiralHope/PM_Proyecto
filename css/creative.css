@@ -136,10 +136,6 @@ img::-moz-selection {
   background-color: transparent;
 }
 
-@media (min-width: 992px) {
-  #mainNav {
-    border-color: transparent;
-    background-color: transparent;
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
@@ -214,7 +210,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-color: #c8ffe2
+
 }
 
 header.masthead hr {
@@ -236,13 +232,15 @@ header.masthead p {
   }
 }
 
-@media (min-width: 992px) {
+
   header.masthead {
     height: 100vh;
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;
+    background-color:#c8ffe2;
   }
+
   header.masthead h1 {
     font-size: 3rem;
   }
@@ -350,4 +348,18 @@ header.masthead p {
 
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(7,145,120,0.5) !important;
+}
+
+#profesoresimg
+{
+      margin-left: 16%;
+}
+
+#pentagonolanding
+{
+  width: 400%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
 }

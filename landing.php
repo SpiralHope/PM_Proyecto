@@ -1,14 +1,4 @@
-<?php
-    include_once('services/variable.php');
-?>
-<?php 
-    if( (session_id() != '' && $GLOBALS['_OPEN'] == true ) ) {
-        header('Location: '.$GLOBALS['INDEX']."/index.php");
-        exit();
-    }
-
-?>
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,16 +141,8 @@
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-6">
-            <div class="col-lg-10 mx-auto">
-              <!-- <h1 class="text-uppercase">
-                <strong>Bienvenido</strong>
-              </h1> 
-              <hr> -->
-            </div>
-            <div class="col-lg-4 mx-auto">
-              
-            </div>
-            
+           
+        <img src="img/WorkClass-Pentagono.png" id="pentagonolanding" class="img-fluid rounded ">
           </div>
           <div class="col-lg-5 mx-auto">
             <div id="loginContainer">
@@ -197,13 +179,14 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="col-lg-10 mx-auto text-center">
-              <h2 class="section-heading ">Todas las herramientas que necesitas en un solo lugar</h2>
+              <h2 class="section-heading ">¿Que es WorkClass?</h2>
               <hr class="light my-4">
-              <p class="text-muted mb-4">WorkClass puede ayudarte a organizar cientos de cursos para todos los empleados de tu empresa, en tan solo unos minutos! Registrate y unete a las miles de empresas que confian en nosotros.</p>
+              <p class="text-muted mb-4">WorkClass es una aplicación web para gestión de los recursos humanos. ¡Permite la administración de cursos para empleados, evaluación de desempeño y muchas cosas más! Su objetivo es ayudar a las empresas a facilitar el trabajo de gestionar cursos y evaluar los empleados de una manera rápida y sencilla.</p>
+
             </div>
           </div>
           <div class="col-lg-5 mx-auto text-center">
-            <img src="img/QuienesSomos_landing.jpg" class="img-fluid rounded ">
+            <img src="img/279094-P5UHNF-418.jpg" class="img-fluid rounded ">
           </div>
         </div>
       </div>
@@ -216,7 +199,7 @@
             <h2 class="section-heading">A tu disposición</h2>
             <hr class="my-4">
             <p class="text-muted">
-              Ensd assda sad asd asd asd aasd asd asd sad
+              WorkClass cuenta con todo lo que necesitas y mucho más!
             </p>
           </div>
         </div>
@@ -226,7 +209,7 @@
           <div class="col-lg-4 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <!--<i class="fa fa-4x fa-chart-area text-primary mb-3 sr-icons"></i>-->
-              <img src="img/PM-Logo-Notificaciones.jpg" class="sr-icons" height="60px" style="margin: 10px;">
+              <img src="img/graph.png" class="sr-icons" height="100px" style="margin: 10px;">
               <h3 class="mb-3">Estadisticas</h3>
               <p class="text-muted mb-0">Obten información destacada sobre tus empleados y cursos en un solo lugar!</p>
             </div>
@@ -234,7 +217,7 @@
           <div class="col-lg-4 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
              <!-- <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i> -->
-              <img src="img/PM-Logo-Encuestas.jpg" class="sr-icons" height="60px" style="margin: 10px;">
+              <img src="img/online-education.png" class="sr-icons" height="100px" style="margin: 10px;">
               <h3 class="mb-3">Listo para usarse</h3>
               <p class="text-muted mb-0">Pueden empezar a crear cursos de inmediato!</p>
             </div>
@@ -242,7 +225,7 @@
           <div class="col-lg-4 col-md-6 mx-auto text-center">
             <div class="service-box mt-5 mx-auto">
               <!--<i class="fa fa-4x fa-newspaper text-primary mb-3 sr-icons"></i>-->
-              <img src="img/PM-Logo-Horario.jpg" class="sr-icons" height="60px" style="margin: 10px;">
+              <img src="img/video-conference.png" class="sr-icons" height="100px" style="margin: 10px;">
               <h3 class="mb-3">Intuitivo</h3>
               <p class="text-muted mb-0">Con una simple interfaz, tendras todas las herramientas a tu alcanze!</p>
             </div>
@@ -255,7 +238,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 mx-auto text-center">
-            <img src="img/Admin_landing.jpg" class="img-fluid rounded ">
+            <img src="img/1157.jpg" class="img-fluid rounded ">
           </div>
            <div class="col-lg-7">
             <div class="col-lg-10 mx-auto text-center">
@@ -274,7 +257,8 @@
           <div class="col-lg-10 mx-auto text-center">
             <h2 class="section-heading text-primary">Certificaciones</h2>
             <hr class="light my-4">
-            <p class="text-muted mb-4">WorkClass puede ayudarte a organizar cientos de cursos para todos los empleados de tu empresa, en tan solo unos minutos! Registrate y unete a las miles de empresas que confian en nosotros.</p>
+            <p class="text-muted mb-4">En WorkClass podrás personalizar tus propios diplomas, así como encontrar plantillas y diseños para acreditar a los alumnos de una manera rápida y sencilla!</p>
+              <img src="img/diploma.png" class="img-fluid rounded ">
           </div>
         </div>
       </div>
@@ -286,117 +270,55 @@
           <div class="col-lg-10 col-lg-offset-1 mx-auto text-center">
             <h2 class="section-heading text-primary">Intructores</h2>
             <hr class="light my-4">
-            <p class="text-muted mb-4">WorkClass puede ayudarte a organizar cientos de cursos para todos los empleados de tu empresa, en tan solo unos minutos! Registrate y unete a las miles de empresas que confian en nosotros.</p>
+            <p class="text-muted mb-4">WorkClass cuenta con prácticas herramientas para hacer mucho más rápido y fácil el trabajo de los maestros.
+            ¡En tan solo unos minutos podrán revisar asistencia, calificar y conocer las estadísticas de cada curso!  y mucho más!
+</p>
           </div>
-          <div class="col-lg-3 text-center">
-            <img src="img/Tutores_01_Landing.jpg" class="img-fluid rounded ">
+          <div class="col-lg-8 text-center" id="profesoresimg">
+            <img src="img/694.jpg" class="img-fluid centered">
           </div>
-          <div class="col-lg-3 text-center">
-            <img src="img/Tutores_02_Landing.jpg" class="img-fluid rounded ">
-          </div>
-          <div class="col-lg-3 text-center">
-            <img src="img/Tutores_03_Landing.jpg" class="img-fluid rounded ">
-          </div>
-          <div class="col-lg-3 text-center">
-            <img src="img/Tutores_04_Landing.jpg" class="img-fluid rounded ">
-          </div>
+         
         </div>
       </div>
     </section>
 
-
-    <section class="p-0" id="portfolio">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+      <section  id="planes" class="bg-primary text-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Planes</h2>
+            <hr class="my-4">
+            <p class="text-muted">
+              Encuentra el plan perfecto para tus necesidades. 
+            </p>
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <!--<i class="fa fa-4x fa-chart-area text-primary mb-3 sr-icons"></i>-->
+              <img src="img/basic.png" class="sr-icons" height="100px" style="margin: 10px;">
+              <h3 class="mb-3">Básico</h3>
+              <p class="text-muted mb-0">Obten información destacada sobre tus empleados y cursos en un solo lugar!</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+             <!-- <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i> -->
+              <img src="img/avanzado.png" class="sr-icons" height="100px" style="margin: 10px;">
+              <h3 class="mb-3">Avanzado</h3>
+              <p class="text-muted mb-0">Pueden empezar a crear cursos de inmediato!</p>
+            </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
+          <div class="col-lg-4 col-md-6 mx-auto text-center">
+            <div class="service-box mt-5 mx-auto">
+              <!--<i class="fa fa-4x fa-newspaper text-primary mb-3 sr-icons"></i>-->
+              <img src="img/premier.png" class="sr-icons" height="100px" style="margin: 10px;">
+              <h3 class="mb-3">Premier</h3>
+              <p class="text-muted mb-0">Con una simple interfaz, tendras todas las herramientas a tu alcanze!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -404,40 +326,8 @@
 
     <section class="bg-dark text-white">
       <div class="container text-center">
-        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
-      </div>
-    </section>
-
-    <section>
-    	filler del landing page
-	<a href="login.html">Ingresar</a>
-	<a href="register.html">Registrarse</a>
-	<a href="forgottenPassword.html">Perdio Contraseña</a>
-
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
-          </div>
-        </div>
+        <h2 class="mb-4">Crea una cuenta ahora y empieza a conocer todas nuestras herramientas que tenemos para ti!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Registrar</a>
       </div>
     </section>
 
