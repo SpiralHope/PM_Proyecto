@@ -177,7 +177,7 @@ img::-moz-selection {
 
   #mainNav.navbar-shrink {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-    background-color: rgba(42,177,74,0.8);
+    background-color: rgba(42,177,74,0.8)!important;
 
   }
   #mainNav.navbar-shrink .navbar-brand {
