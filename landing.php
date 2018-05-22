@@ -149,7 +149,7 @@
               <div class="form-top-div">
                 <div class="col-lg-11 mx-auto">
                   <span class="text-muted form-top-div-text"> No tienes cuenta? </span>
-                  <a class="btn btn-primary btn-xl js-scroll-trigger form-top-div-button" href="#planes">  Registrate</a>
+                  <a class="btn btn-primary btn-xl js-scroll-trigger form-top-div-button" href="http://www.workclass.xyz/register.html">  Registrate</a>
                 </div>
               </div>
               <form id="login-form" data-toggle="validator" class="text-muted text-left" role="form">
@@ -327,7 +327,7 @@
     <section class="bg-dark text-white">
       <div class="container text-center">
         <h2 class="mb-4">Crea una cuenta ahora y empieza a conocer todas nuestras herramientas que tenemos para ti!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Registrar</a>
+        <a class="btn btn-light btn-xl sr-button" href="http://www.workclass.xyz/register.html">Registrar</a>
       </div>
     </section>
 
@@ -348,12 +348,18 @@
 
     <script type="text/javascript">
     	
-    	 var rootUrl = "";
+    	var rootUrl = "http://www.workclass.xyz";
+
+
       $(document).ready(function() {
         $('#login-form').on('submit', function(e){
-                    e.preventDefault();
- var formData = new FormData($("#login-form")[0]);
-              var url = rootUrl + "services/loginService.php"
+              
+              e.preventDefault();
+              
+              var formData = new FormData($("#login-form")[0]);
+
+              var url = rootUrl + "/services/loginService.php";
+
               $.ajax({
                 type: "POST",
                 url: url,
@@ -361,29 +367,26 @@
                 contentType: false,
                 processData: false,
                 data: formData, //$("#login-form").serialize(), // serializes the form's elements.
-                 success: function(data)
-                 {
+                success: function(data)
+                {
                   if(data.success === true){
-                     window.location.replace(rootUrl + "index.php");
+                     window.location.replace(rootUrl + "/index.php");
                   }else{
                     alert("Credenciales erroneas");
                     console.log(data);
                   }
-                     //alert(data); // show response from the php script.
-                 },
-                 error: function(data){
-
-                 }
+                },
+                error: function(data){
+                }
               }).fail(function( jqXHR, textStatus, errorThrown ) {
-                   if(console && console.log){
-                    console.log(errorThrown);
-                    console.log(textStatus);
-                    
-                   }
-                });
+                if(console && console.log){
+                  console.log(errorThrown);
+                  console.log(textStatus);
+                }
+              });
 
         });
-
+    
     });
 
     </script>

@@ -65,12 +65,13 @@
 
     <script type="text/javascript">
 
-      var rootUrl = "";
+       var rootUrl = "http://www.workclass.xyz";
+      
       $(document).ready(function() {
         $('#login-form').on('submit', function(e){
                     e.preventDefault();
  var formData = new FormData($("#login-form")[0]);
-              var url = rootUrl + "services/loginService.php"
+              var url = rootUrl + "/services/loginService.php"
               $.ajax({
                 type: "POST",
                 url: url,
@@ -81,7 +82,7 @@
                  success: function(data)
                  {
                   if(data.success === true){
-                     window.location.replace(rootUrl + "index.php");
+                     window.location.replace(rootUrl + "/index.php");
                   }else{
                     alert("Credenciales erroneas");
                     console.log(data);

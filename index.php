@@ -18,7 +18,6 @@
             exit();
         }
 
-
     }else{
          header('Location: '.$GLOBALS['INDEX'].'/landing.php');
         exit();

@@ -84,7 +84,7 @@
 
     <script type="text/javascript">
 
-      var rootUrl = "";
+       var rootUrl = "http://www.workclass.xyz";
       $(document).ready(function() {
 
         $('#login-form').validator().on('submit', function (e) {
@@ -97,7 +97,7 @@
             e.preventDefault();
             var formData = new FormData($("#login-form")[0]);
               formData.append("tipo_plan", '1');
-              var url = rootUrl + "services/registerService.php"
+              var url = rootUrl + "/services/registerService.php"
               $.ajax({
                 type: "POST",
                 url: url,
@@ -108,7 +108,7 @@
                  success: function(data)
                  {
                   if(data.success === true){
-                     window.location.replace(rootUrl + "index.php");
+                     window.location.replace(rootUrl + "/index.php");
                   }else{
                     alert("Credenciales erroneas");
                     console.log(data);

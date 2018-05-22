@@ -39,6 +39,19 @@ error_reporting(E_ERROR | E_PARSE);
 
     
 
+      
+
+    #Variables de entorno de la Base de Datos
+
+    $DB_HOST = "localhost"; //localhost
+
+    $DB_USERNAME = "workclas_root"; //id1564859_root
+
+    $DB_PASSWORD = "P1nk13";
+
+    $DB_DATABASE = "workclas_PM"; //id1564859_news
+
+
 
 
     #La clase Connection sirve para comunicarse con la base de datos
@@ -811,7 +824,7 @@ $actual = $actual+1;
 // $GLOBALS["_SQL"] = $_SQL;
     $_OPEN = false;
 
-    $INDEX = "http://localhost/PM";// "http://www.workclass.xyz"; //https://solarium-news.000webhostapp.com
+    $INDEX = "http://www.workclass.xyz"; //https://solarium-news.000webhostapp.com
 
     if(isset($_SESSION["correo"])){
 

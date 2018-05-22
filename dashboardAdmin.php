@@ -634,13 +634,13 @@
 
     <script type="text/javascript">
 
-      var rootUrl = '';
+      var rootUrl = 'http://www.workclass.xyz';
       $('#logoutConfirmButton').click(function(event) {
           event.preventDefault();
 
               var formData = new FormData();
 
-              var url = rootUrl + "services/logoutService.php"
+              var url = rootUrl + "/services/logoutService.php"
               $.ajax({
                 type: "POST",
                 url: url,
@@ -651,7 +651,7 @@
                  success: function(data)
                  {
                   if(data.success === true){
-                     window.location.replace(rootUrl + "index.php");
+                     window.location.replace(rootUrl + "/index.php");
                   }else{
                     alert("Error al salir");
                   }
@@ -734,9 +734,16 @@
    <div class="nifty-modal fall" style="z-index: 90002" id="modal-1">
       <div class="md-content">
         <div class='md-title'>
-          <h3>Modal Dialog</h3>
+          <h3>Curso Nuevo</h3>
         </div>
         <div class='md-body'>
+          <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  
+                </div>
+              </div>
+          </div>
           <p>This is a modal window. You can do the following things with it:</p>
           <ul>
             <li><strong>Read:</strong> Modal windows will probably tell you something important so don't forget to read what it says.</li>
