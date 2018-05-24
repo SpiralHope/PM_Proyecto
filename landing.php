@@ -19,6 +19,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -51,8 +52,6 @@
         display: inline-block;
       }
 
-      .form-top-div-button{      }
-
       .icon{
       	width: 20px;
       	font-size: 20px;
@@ -67,7 +66,7 @@
       #navbarResponsive ul li{
         display: inline-block;
         position: relative;
-      }
+      } }
     #navbarResponsive ul li::before {
       position: absolute;
       content: "";
@@ -100,7 +99,24 @@
                                               rgba(7,145,120,1) 90%,
                                               rgba(7,145,120,0) 100% );
     }
-  }
+
+    footer
+    {
+      padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 92px;
+    background-color: #000;
+    color: #848484;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: FuturaStd-Heavy;
+    letter-spacing: .18em;
+    }
+
+    footer .list-header {
+    font-size: 11px;
+    color: #fff;
+  
 
     </style>
 
@@ -331,6 +347,24 @@
       </div>
     </section>
 
+    <footer>
+    <div class="container" style="display: flex;"">
+     <div class="col-md-6">
+      <ul>
+      <li><div class="col-md-4"><i class="fa fa-facebook"> WorkClass</i></div></li>
+      <li><div class="col-md-4"><i class="fa fa-twitter"></i>@Work_Class</div></li>
+      <li><div class="col-md-4"><i class="fa fa-instagram"></i> @WorkClass</div></li>
+      </ul>
+  </div>
+      <div class="col-md-6">
+      <div class="col-md-4">Phone contact</div>
+      <div class="col-md-4">55-55-55-55</i></div>
+      <div class="col-md-4">© 2018 MachineGuns</div>
+    </div>
+ 
+        
+    </footer>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -393,4 +427,6 @@
   </body>
 
 </html>
+
+
 
