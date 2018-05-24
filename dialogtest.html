@@ -32,7 +32,7 @@
 
     .cursoForm{
       width: 600px;
-      height: 300px;
+      height: 350px;
       position: relative;
       overflow-x: hidden;
     }
@@ -78,9 +78,9 @@
       max-width: 680px;
     }
 
-    .descCurso{
-      width: 600px;
+    #descCurso{
       height: 120px;
+       resize: none;
     }
 
     input{
@@ -91,6 +91,60 @@
     .has-error input{
         transition: color 1.0s  ease-out;
         color: #de4444 !important;
+    }
+
+    input{
+    transition: color 1.0s  ease-out;
+    color: #6c757d !important;
+
+    }
+    .has-error input{
+        transition: color 1.0s  ease-out;
+        color: #de4444 !important;
+    }
+
+    textarea{
+      transition: color 1.0s  ease-out;
+      color: #6c757d !important;
+    }
+    .has-error textarea{
+        transition: color 1.0s  ease-out;
+        color: #de4444 !important;
+    }
+
+    .with-errors{
+      padding-left: 30px; 
+      color: #de4444 !important;
+    }
+
+    .md-content > div ul {
+      padding: 0px;
+    }
+
+    .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #ccc;
+      opacity: 1; /* Firefox */
+    }
+
+    .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #ccc;
+    }
+
+    .form-control::-ms-input-placeholder { /* Microsoft Edge */
+      color: #ccc;
+    }
+
+    .has-error .form-control {
+        border-color: #a94442;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
+
+    .has-error .form-control:focus {
+        border-color: #843534;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)  #ce8483;;
     }
 
   </style>
@@ -124,27 +178,31 @@
                   <form id="slide1Form" role="form" data-toggle="validator">
                     <div class="form-group">
                       <label for="nombre">Nombre del curso:</label>
-                      <input type="text" class="form-control" id="nombreCurso" data-minlength="6" autocomplete="off"  placeholder="Ingrese el nombre" required>
-                      <small id="emailHelp" class="form-text text-muted"></small>
+                      <input type="text" class="form-control" id="nombreCurso" name="nombre" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
+                      <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                      <label for="desc">Password</label>
-                      <textarea type="password" class="form-control" id="descCurso" required></textarea>
+                      <label for="descCurso">Descripcion</label>
+                      <textarea type="text" class="form-control" id="descCurso" name="descCurso" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required></textarea>
+                      <div class="help-block with-errors"></div>
                     </div>
                   </form>
                 </div>  
 
 
                 <div class="slideCurso" id="slide2">
-                  <form id="slide2Form">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <h2>Introduzca horario del curso:</h2>
+                  <form id="slide2Form" role="form" data-toggle="validator">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1"> Hora Inicio</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Hora Final</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -205,6 +263,7 @@
 
 
       var mesgSel = '#messageModal';
+      var msgText = '#msgText';
 
 
       
@@ -215,9 +274,9 @@
       var openMsgModal = function(msg){
 
         if(msg){
-
+          $(msgText).html(msg);
         }
-        
+
         $(mesgSel).modal({
           escapeClose: false,
           clickClose: false,
@@ -260,7 +319,7 @@
 
 
           if( $('#slide'+ self.slideActual +'Form').validator('validate').has('.has-error').length > 0){
-            openMsgModal();
+            openMsgModal('Llene todos los campos!!!');
             return;
           }
 
@@ -310,6 +369,8 @@
               e.preventDefault();
               self.nextSlide();
           });
+
+          $(mainSel + btn2Sel).prop('disabled', true);
 
         }
 

@@ -34,7 +34,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  <link href="vendor/jquery-modal/jquery.modal.min.css" rel="stylesheet">
+  
 
  
 
@@ -106,29 +106,61 @@
     #mainContent{
       position: relative;
     }
+
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level{
     
       background: #283233;
     }
-#mainNav.fixed-top.navbar-dark .sidenav-toggler {
-  background-color: #283233;
-}
 
-.fc-event, .fc-event-dot {
-  background-color: rgba(2,216,117,0.4);
-}
-.fc-title{
-  color: #444444;  
-}
+    #mainNav.fixed-top.navbar-dark .sidenav-toggler {
+      background-color: #283233;
+    }
 
-.fc-event {
-  padding-left: 4px;
-  border: 1px solid #337b61;
-}
-.dropdown-menu{
-  left: initial;
-  right: 0px;
-}
+    .fc-event, .fc-event-dot {
+      background-color: rgba(2,216,117,0.4);
+    }
+    .fc-title{
+      color: #444444;  
+    }
+
+    .fc-event {
+      padding-left: 4px;
+      border: 1px solid #337b61;
+    }
+    .dropdown-menu{
+      left: initial;
+      right: 0px;
+    }
+
+    .fc-past{
+      background-color: #a1bd9f;
+    }
+
+    .fc-other-month{
+      background-color: #5e9274;
+    }
+
+    .fc-other-month .fc-day-number{
+      color: #eee;
+    }
+
+
+  .modal-open {
+    overflow: hidden;
+  }
+
+  .modal {
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+  }
+
+  .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   </style>
 
 </head>
@@ -650,6 +682,7 @@
                 dataType: "json",
                 contentType: false,
                 processData: false,
+                async: false,
                 data: formData, //$("#login-form").serialize(), // serializes the form's elements.
                  success: function(data)
                  {
@@ -678,6 +711,7 @@
         select: function(start, end) {
           if(start.isBefore( moment() )) {
               $('#calendar').fullCalendar('unselect');
+              alert("solo dias nuevos");
               return false;
           }
         }, 
