@@ -234,7 +234,6 @@ header.masthead p {
 
 
   header.masthead {
-    height: 100vh;
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;
@@ -362,4 +361,29 @@ header.masthead p {
     left: 0px;
     top: 0px;
 
+}
+
+#pentagonoinicio
+{
+
+max-width: 45%;
+}
+
+.text-pentagono{
+    position: absolute;
+    font-weight: bold;
+    color:#12b03a;
+  z-index:2;
+   text-align: center;
+       margin-left: 117px;
+       padding-top: 40px;
+}
+
+.text-pentagono2{
+position: absolute;
+    z-index: 2;
+    color:#12b03a;
+    text-align: center;
+    margin-left: 53px;
+    padding-top: 154px;
 }

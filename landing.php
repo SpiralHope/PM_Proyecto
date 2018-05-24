@@ -156,8 +156,10 @@
     <header class="masthead text-center text-white d-flex" id="inicio">
       <div class="container my-auto">
         <div class="row">
-          <div class="col-lg-6">
-           
+          <div class="col-lg-6" id="pentagonoinicio">
+           <h1 class="text-pentagono">WorkClass</h1><br>
+<h3 class="text-pentagono2">La mejor opción para<br> la administración de cursos <br>de capacitación tu empresa!</h3>
+
         <img src="img/WorkClass-Pentagono.png" id="pentagonolanding" class="img-fluid rounded ">
           </div>
           <div class="col-lg-5 mx-auto">
@@ -274,7 +276,7 @@
             <h2 class="section-heading text-primary">Certificaciones</h2>
             <hr class="light my-4">
             <p class="text-muted mb-4">En WorkClass podrás personalizar tus propios diplomas, así como encontrar plantillas y diseños para acreditar a los alumnos de una manera rápida y sencilla!</p>
-              <img src="img/diploma.png" class="img-fluid rounded ">
+              <img src="img/diploma.png" class="img-fluid rounded " style="width: 340px">
           </div>
         </div>
       </div>
