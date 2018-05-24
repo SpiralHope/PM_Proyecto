@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap core CSS-->
+  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
+
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <link href="vendor/FullCalendar/fullcalendar.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="vendor/jquery-modal/jquery.modal.min.css" rel="stylesheet">
+  <link href="vendor/jquery-timepicker/jquery.timepicker.css" rel="stylesheet">
+
+  <link href="vendor/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+  <link href="css/formularios.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+
+
+
+	<!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Moment and FullCalendar Plugins -->
+
+    <script src="vendor/moment/moment.js"></script>
+    <script src='vendor/jquery-modal/jquery.modal.js'></script>
+    <script src="vendor/validator/validator.js"></script>
+    <script src="vendor/jquery-timepicker/jquery.timepicker.js"></script>
+
+    <script src="vendor/bootstrap-fileinput/js/fileinput.js"></script>
+    <script src="vendor/bootstrap-fileinput/js/locales/es.js"></script>
+
+
+    <script type="text/javascript">
+
+
+
+      var btn1Sel = ' .button1';
+      var btn2Sel = ' .button2';
+      var btn3Sel = ' .button3';
+      var mesgSel = '#messageModal';
+      var msgText = '#msgText';
+      
+      var event1Button = function(){
+        $.modal.close();
+      }
+
+      var openMsgModal = function(msg){
+
+        if(msg){
+          $(msgText).html(msg);
+        }
+
+        $(mesgSel).modal({
+          escapeClose: false,
+          clickClose: false,
+          exishowClose: false,
+          closeExisting: false,
+        });
+      }
+
+
+    	$(document).ready(function($) {
+    
+         $(mesgSel + btn1Sel).click(function(e) {
+            e.preventDefault();
+            event1Button();
+        });
+
+
+      });
+    </script>
+
+</body>
+</html>

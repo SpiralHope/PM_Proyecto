@@ -36,6 +36,11 @@
   <link href="css/sb-admin.css" rel="stylesheet">
   
 
+  <link href="vendor/jquery-modal/jquery.modal.min.css" rel="stylesheet">
+  <link href="vendor/jquery-timepicker/jquery.timepicker.css" rel="stylesheet">
+
+  <link href="vendor/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+  <link href="css/formularios.css" rel="stylesheet">
  
 
   <style type="text/css">
@@ -211,7 +216,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                <a href="navbar.html">Agendar Nuevo Curso</a>
+                <a href="dashboardAdmin_CrearCurso.php">Agendar Nuevo Curso</a>
               </li>
               <li>
                 <a href="cards.html">Ver Cursos</a>
@@ -325,86 +330,11 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active" id="active-tab">Principal</li>
+        <li class="breadcrumb-item active" id="active-tab">Crear Sala</li>
       </ol>
-      <!-- Icon Cards-->
-      <div class="row" style="display: none">
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-comments"></i>
-              </div>
-              <div class="mr-5">26 New Messages!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">11 New Tasks!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-shopping-cart"></i>
-              </div>
-              <div class="mr-5">123 New Orders!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-support"></i>
-              </div>
-              <div class="mr-5">13 New Tickets!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Area Chart Example-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-area-chart"></i> Empleados en cursos</div>
-        <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
-        </div>
-        <div class="card-footer small text-muted" id="part-emp-chart-date"></div>
-      </div>
+      
 
-      <!-- Calendar -->
+       <!-- Calendar -->
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-calendar"></i> Planeador de Cursos</div>
@@ -414,218 +344,140 @@
         <div class="card-footer small text-muted"></div>
       </div>
 
-      <!-- Example DataTables Card-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i>  Plantilla de empleados</div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Posicion</th>
-                  <th>Oficina</th>
-                  <th>Edad</th>
-                  <th>Fecha de registro</th>
-                  <th>Salario</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Posicion</th>
-                  <th>Oficina</th>
-                  <th>Edad</th>
-                  <th>Fecha de registro</th>
-                  <th>Salario</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                </tr>
-                <tr>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                  <td>San Francisco</td>
-                  <td>66</td>
-                  <td>2009/01/12</td>
-                  <td>$86,000</td>
-                </tr>
-                <tr>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                  <td>Edinburgh</td>
-                  <td>22</td>
-                  <td>2012/03/29</td>
-                  <td>$433,060</td>
-                </tr>
-                <tr>
-                  <td>Airi Satou</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>33</td>
-                  <td>2008/11/28</td>
-                  <td>$162,700</td>
-                </tr>
-                <tr>
-                  <td>Brielle Williamson</td>
-                  <td>Integration Specialist</td>
-                  <td>New York</td>
-                  <td>61</td>
-                  <td>2012/12/02</td>
-                  <td>$372,000</td>
-                </tr>
-                <tr>
-                  <td>Herrod Chandler</td>
-                  <td>Sales Assistant</td>
-                  <td>San Francisco</td>
-                  <td>59</td>
-                  <td>2012/08/06</td>
-                  <td>$137,500</td>
-                </tr>
-                <tr>
-                  <td>Rhona Davidson</td>
-                  <td>Integration Specialist</td>
-                  <td>Tokyo</td>
-                  <td>55</td>
-                  <td>2010/10/14</td>
-                  <td>$327,900</td>
-                </tr>
-                <tr>
-                  <td>Colleen Hurst</td>
-                  <td>Javascript Developer</td>
-                  <td>San Francisco</td>
-                  <td>39</td>
-                  <td>2009/09/15</td>
-                  <td>$205,500</td>
-                </tr>
-                <tr>
-                  <td>Sonya Frost</td>
-                  <td>Software Engineer</td>
-                  <td>Edinburgh</td>
-                  <td>23</td>
-                  <td>2008/12/13</td>
-                  <td>$103,600</td>
-                </tr>
-                <tr>
-                  <td>Jena Gaines</td>
-                  <td>Office Manager</td>
-                  <td>London</td>
-                  <td>30</td>
-                  <td>2008/12/19</td>
-                  <td>$90,560</td>
-                </tr>
-                <tr>
-                  <td>Quinn Flynn</td>
-                  <td>Support Lead</td>
-                  <td>Edinburgh</td>
-                  <td>22</td>
-                  <td>2013/03/03</td>
-                  <td>$342,000</td>
-                </tr>
-                <tr>
-                  <td>Charde Marshall</td>
-                  <td>Regional Director</td>
-                  <td>San Francisco</td>
-                  <td>36</td>
-                  <td>2008/10/16</td>
-                  <td>$470,600</td>
-                </tr>
-                <tr>
-                  <td>Haley Kennedy</td>
-                  <td>Senior Marketing Designer</td>
-                  <td>London</td>
-                  <td>43</td>
-                  <td>2012/12/18</td>
-                  <td>$313,500</td>
-                </tr>
-                <tr>
-                  <td>Tatyana Fitzpatrick</td>
-                  <td>Regional Director</td>
-                  <td>London</td>
-                  <td>19</td>
-                  <td>2010/03/17</td>
-                  <td>$385,750</td>
-                </tr>
-                <tr>
-                  <td>Michael Silva</td>
-                  <td>Marketing Designer</td>
-                  <td>London</td>
-                  <td>66</td>
-                  <td>2012/11/27</td>
-                  <td>$198,500</td>
-                </tr>
-                <tr>
-                  <td>Paul Byrd</td>
-                  <td>Chief Financial Officer (CFO)</td>
-                  <td>New York</td>
-                  <td>64</td>
-                  <td>2010/06/09</td>
-                  <td>$725,000</td>
-                </tr>
-                <tr>
-                  <td>Gloria Little</td>
-                  <td>Systems Administrator</td>
-                  <td>New York</td>
-                  <td>59</td>
-                  <td>2009/04/10</td>
-                  <td>$237,500</td>
-                </tr>
-                <tr>
-                  <td>Bradley Greer</td>
-                  <td>Software Engineer</td>
-                  <td>London</td>
-                  <td>41</td>
-                  <td>2012/10/13</td>
-                  <td>$132,000</td>
-                </tr>
-                <tr>
-                  <td>Dai Rios</td>
-                  <td>Personnel Lead</td>
-                  <td>Edinburgh</td>
-                  <td>35</td>
-                  <td>2012/09/26</td>
-                  <td>$217,500</td>
-                </tr>
-                <tr>
-                  <td>Jenette Caldwell</td>
-                  <td>Development Lead</td>
-                  <td>New York</td>
-                  <td>30</td>
-                  <td>2011/09/03</td>
-                  <td>$345,000</td>
-                </tr>
-                <tr>
-                  <td>Yuri Berry</td>
-                  <td>Chief Marketing Officer (CMO)</td>
-                  <td>New York</td>
-                  <td>40</td>
-                  <td>2009/06/25</td>
-                  <td>$675,000</td>
-                </tr>
+
+
+
+
+
+    <div id="messageModal" class="modal msgModal">
+      <p id="msgText"></p>
+      <button class="btn btn-danger button1"  >Cerrar</button>
+    </div>
+
+    
+    <div id="mainModal" class="modal ">
+      
+
+      <div class="md-content">
+          <div class='md-title'  >
+            <h3 id="cursoTitle" >Curso Nuevo/Nombre</h3>
+          </div>
+          <div class='md-body'>
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                  </div>
+                </div>
+            </div>
+            
+            <div class="bodyCursoSlider">
+              <div class="cursoForm">
+
+                <div id="slideContainer">
+
+
+                  <div class="slideCurso" id="slide1">
+                    <form id="slide1Form" role="form" data-toggle="validator">
+                      <div class="form-group">
+                        <label for="nombreCurso">Nombre del curso:</label>
+                        <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required tabindex="-1">
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                        <label for="descCurso">Descripcion</label>
+                        <textarea type="text" class="form-control" id="descCurso" name="descCurso" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required tabindex="-1"></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </form>
+                  </div>  
+
+
+                  <div class="slideCurso" id="slide2">
+                    <h6>Introduzca horario del curso:</h6>
+                    <form id="slide2Form" role="form" data-toggle="validator">
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="horaIni"> Hora Inicio</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="horaIni" name="horaIni" autocomplete="off" required tabindex="-1">
+                            <a href="#" class="input-group-addon selector-curso" id="showHoraIni" tabindex="-1">v</a>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="horaFin"> Hora Final</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="horaFin" name="horaFin" autocomplete="off" required tabindex="-1">
+                            <a href="#" class="input-group-addon selector-curso" id="showHoraFin" tabindex="-1">v</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="divider-curso"></div>
+                      <div class="row" id="sala-detalle">
+                        <div class="col-md-4">
+                          <div class="col-md-12">
+                            <img id="img-sala" src="img/placeholder.png" class="picture-curso-sala img-thumbnail">
+                          </div>
+                          <div class="col-md-6">
+                            <div class="cupo-curso">
+                              <i class="fa fa-user" aria-hidden="true"></i><span id="cupo-sala">--</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-8">
+                          <div class="col-md-12">
+                            <label for="sala">Salas Disponibles</label>
+                            <select id="sala" name="sala" autocomplete="off" required tabindex="-1">
+                              <option disabled selected value> -- Seleccione una opcion -- </option>
+
+                            </select>
+                          </div>
+                          <div class="col-md-12">
+                            <p>Ubicacion</p>
+                            <p id="ubi-sala" class="curso-ubi-text text-muted"></p>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </form>
+                  </div>
+
+                    
+                  <div class="slideCurso" id="slide3">
+                    <form id="slide3Form">
+                      <div class="form-group">
+                        <label for="instructor">Instructores </label>
+                        <select id="instructor" name="instructor" autocomplete="off" required tabindex="-1">
+                          <option disabled selected value> -- Seleccione una opcion -- </option>
+                        </select>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                            <img id="img-instructor" src="img/placeholder.png" class="picture-curso-sala img-thumbnail">
+                        </div>
+                        <div class="col-md-8">
+                          <p>Descripcion</p>
+                          <p id="desc-instructor" class="curso-desc-text text-muted"></p>
+                        </div>                      
+                      </div>
+                    </form>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
            
-              </tbody>
-            </table>
+            <div class="btn-group">
+              <button class="btn btn-danger button1"  >Cancelar</button>
+              <button class="btn btn-primary button2" >Anterior</button>
+              <button class="btn btn-danger button3"  >Siguiente</button>
+            </div>
+
           </div>
         </div>
-        <div class="card-footer small text-muted">Actualizado hoy a las 10:50 AM</div>
-      </div>
     </div>
+
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -675,7 +527,234 @@
 
     <script src='vendor/nifty-modal/nifty.js'></script>
 
-    <script src='vendor/jquery-modal/jquery.modal.js'></script>
+     <script src='vendor/jquery-modal/jquery.modal.js'></script>
+    <script src="vendor/validator/validator.js"></script>
+    <script src="vendor/jquery-timepicker/jquery.timepicker.js"></script>
+
+    <script src="vendor/bootstrap-fileinput/js/fileinput.js"></script>
+    <script src="vendor/bootstrap-fileinput/js/locales/es.js"></script>
+
+    <script type="text/javascript">
+
+
+
+      $('#horaIni').timepicker({ 'step': 15, 'timeFormat': 'h:i A', 'minTime': '8:00am', 'maxTime': '11:30pm', 'disableTextInput': true});
+      $('#horaFin').timepicker({ 'step': 15, 'timeFormat': 'h:i A', 'minTime': '8:00am', 'maxTime': '11:30pm', 'disableTextInput': true});
+
+      $('#showHoraIni').on('click', function(e){
+        e.preventDefault();
+        $('#horaIni').timepicker('show');
+      });
+
+      $('#showHoraFin').on('click', function(e){
+        e.preventDefault();
+        $('#horaFin').timepicker('show');
+      });
+
+
+      
+
+      $('#horaIni').change(function(event) {
+        //alert('cambio');
+      });
+
+      var mainSel = '#mainModal';
+      var btn1Sel = ' .button1';
+      var btn2Sel = ' .button2';
+      var btn3Sel = ' .button3';
+
+
+      var mesgSel = '#messageModal';
+      var msgText = '#msgText';
+
+
+      
+      var event1Button = function(){
+        $.modal.close();
+      }
+
+      var openMsgModal = function(msg){
+
+        if(msg){
+          $(msgText).html(msg);
+        }
+
+        $(mesgSel).modal({
+          escapeClose: false,
+          clickClose: false,
+          exishowClose: false,
+          closeExisting: false,
+          showClose: false,
+
+        });
+      }
+
+      var formularioCurso = function(){
+        var self = this;
+        self.slideActual = 1;
+        self.slideTotales = 3;
+
+        self.container = '#slideContainer';
+
+        self.title = '#cursoTitle';
+        
+        self.afterAnim = function(){
+            $(mainSel + btn1Sel).prop('disabled', false);
+            $(mainSel + btn3Sel).prop('disabled', false);
+            $(mainSel + btn3Sel).html('Siguiente');
+          if(self.slideActual > 1){
+            $(mainSel + btn2Sel).prop('disabled', false);
+          }
+          if(self.slideActual == 1 ){
+            $(self.title).html('Crear Curso/Nombre');
+          }
+          if(self.slideActual == 2 ){
+            $(self.title).html('Crear Curso/Sala');
+          }
+
+          if(self.slideActual == 3 ){
+            $(self.title).html('Crear Curso/Instructor');
+            $(mainSel + btn3Sel).html('Crear');
+          }
+
+        }
+
+        self.nextSlide = function(){
+
+
+          if( $('#slide'+ self.slideActual +'Form').validator('validate').has('.has-error').length > 0){
+            openMsgModal('Llene todos los campos!!!');
+            return;
+          }
+
+
+          if(self.slideActual == 2){
+            var timeIni = moment($('#horaIni').val(),"hh:mm A", true);
+            var timeFin = moment($('#horaFin').val(),"hh:mm A", true); 
+            if(!timeIni.isValid() || !timeFin.isValid() ){
+              openMsgModal('Introduzca tiempos validos');
+              return;
+            }else if(timeFin.isBefore(timeIni)){
+              $('#horaIni').val(timeFin.format('hh:mm A'));
+              $('#horaFin').val(timeIni.format('hh:mm A'));
+            }
+          }
+
+          if(self.slideActual < self.slideTotales){
+            self.slideActual ++;
+            $(mainSel + btn1Sel).prop('disabled', true);
+            $(mainSel + btn2Sel).prop('disabled', true);
+            $(mainSel + btn3Sel).prop('disabled', true);
+
+            $(self.container).animate({left: "-=600px", }, 200, self.afterAnim); 
+          }
+        }
+
+        self.prevSlide = function(){
+          if(self.slideActual > 1){
+            self.slideActual --;
+            $(mainSel + btn1Sel).prop('disabled', true);
+            $(mainSel + btn2Sel).prop('disabled', true);
+            $(mainSel + btn3Sel).prop('disabled', true);
+
+            $(self.container).animate({left: "+=600px", }, 200, self.afterAnim);
+          }
+        }
+
+      
+
+        self.crearCurso = function(){
+
+        }
+
+        self.closeCurso = function(){
+          event1Button();
+        }
+
+        self.init = function(){
+
+
+          $(mainSel + btn1Sel).click(function(e) {
+            e.preventDefault();
+             self.closeCurso();
+          });
+
+          $(mainSel + btn2Sel).click(function(e) {
+              e.preventDefault();
+              self.prevSlide();
+          });
+
+          $(mainSel + btn3Sel).click(function(e) {
+              e.preventDefault();
+              self.nextSlide();
+          });
+
+           $('#sala-detalle').slideUp('fast', function() {
+              
+          });
+
+ 
+          $('#horaIni, #horaFin').on('changeTime', function(event) {
+            var timeIni = moment($('#horaIni').val(),"hh:mm A", true);
+            var timeFin = moment($('#horaFin').val(),"hh:mm A", true); 
+            if(!timeIni.isValid() || !timeFin.isValid() ){
+              return;
+            }else if(timeFin.isBefore(timeIni)){
+              $('#horaFin').val(timeIni.format('hh:mm A'));
+              $('#horaIni').val(timeFin.format('hh:mm A')); 
+
+            }/* Act on the event */
+
+            $('#sala-detalle').slideDown('slow', function() {
+              
+            });
+
+
+          });
+
+           self.reset();
+
+
+
+        }
+
+        self.reset  = function(){
+          $(mainSel + btn2Sel).prop('disabled', true);
+
+          $(self.container).animate({left: "=0px", }, 0, self.afterAnim) 
+        }
+
+      }
+
+      var FormCur = new formularioCurso();
+      FormCur.init();
+
+      $(document).ready(function($) {
+      
+
+        /*
+          $(mainSel + btn1Sel).click(function(e) {
+              e.preventDefault();
+              event1Button();
+          });
+
+          $(mainSel + btn2Sel).click(function(e) {
+              e.preventDefault();
+              openMsgModal();
+          });
+
+        */
+
+          $(mesgSel + btn1Sel).click(function(e) {
+              e.preventDefault();
+              event1Button();
+          });
+
+
+
+      });
+    </script>
+
 
     <script type="text/javascript">
 
@@ -729,31 +808,28 @@
           if(!date.isBefore(moment()) || date.isSame(moment(), 'day') ){
             //alert('a day has been clicked!');
             
-          $('#modal-1').nifty('show');//({backdrop: 'static', keyboard: false});
+          //$('#modal-1').nifty('show');//({backdrop: 'static', keyboard: false});
 
             var myevent =   {
               title  : 'event2',
               start  : date,
               nombre: "asdf"
           }
-            $('#calendar').fullCalendar( 'renderEvent', myevent, true);
+            //$('#calendar').fullCalendar( 'renderEvent', myevent, true);
+
+            FormCur.reset(); 
+            $(mainSel).modal({
+              escapeClose: false,
+              clickClose: false,
+              exishowClose: false,
+              showClose: false 
+            });
+
           }
         },
 
         events: [
-          {
-              title  : 'Curso de integracion de interfaces dinamicas',
-              start  : '2018-05-02',
-          },
-          {
-              title  : 'Curso 2',
-              start  : '2018-05-05'
-          },
-          {
-              title  : 'Curso 3',
-              start  : '2018-05-09T12:30:00',
-              allDay : false // will make the time show
-          }
+       
         ],
         eventClick: function(calEvent, jsEvent, view) {
 

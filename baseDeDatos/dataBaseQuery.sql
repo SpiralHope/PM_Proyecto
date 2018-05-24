@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS PM_SQL;
 CREATE DATABASE IF NOT EXISTS PM_SQL;
 USE PM_SQL;
 
-
+drop table if exists empresa;
 create table empresa(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre_de_empresa varchar(255),
@@ -15,6 +15,7 @@ create table empresa(
     erased BOOLEAN DEFAULT FALSE
 );
 
+drop table if exists empleado;
 CREATE TABLE empleado
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -31,11 +32,15 @@ CREATE TABLE empleado
     FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
 
+
+drop table if exists empleado_sigue_instructor;
 create table empleado_sigue_instructor(
 	id_empleado int,
     id_instructor int
 );
 
+
+drop table if exists sala;
 CREATE TABLE sala
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -47,6 +52,8 @@ CREATE TABLE sala
     FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
 
+
+drop table if exists curso;
 CREATE TABLE curso
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -68,6 +75,7 @@ CREATE TABLE curso
     id_admin int
 );
 
+drop table if exists empleado_inscrito_a_Curso;
 CREATE TABLE empleado_inscrito_a_Curso
 (
 	id_curso int,
@@ -78,6 +86,7 @@ CREATE TABLE empleado_inscrito_a_Curso
 );
 
 
+drop table if exists notificacion;
 create table notificacion(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	id_usuario int,
@@ -89,6 +98,7 @@ create table notificacion(
 );
 
 
+drop FUNCTION if exists empleado_existe;
 DELIMITER //
 CREATE FUNCTION empleado_existe(m_correo VARCHAR(255) ) RETURNS BOOLEAN
 BEGIN
@@ -102,6 +112,9 @@ END //
 DELIMITER ;
 
 
+
+
+drop procedure if exists registroEmpresa;
 delimiter $$
 create procedure registroEmpresa(IN m_nombre varchar(255), IN m_apellido varchar(255), in m_correo varchar(255), in m_password varchar(255), in m_tipo_plan int)
 begin
@@ -130,6 +143,7 @@ end $$
 delimiter;
 
 
+drop procedure if exists login;
 DELIMITER //
 CREATE PROCEDURE login(IN m_email VARCHAR(255), IN m_password VARCHAR(255))
 BEGIN	
@@ -141,7 +155,7 @@ END //
 DELIMITER ;
 
 
-
+drop procedure if exists registroEmpleado;
 DELIMITER //
 CREATE PROCEDURE registroEmpleado(IN m_nombre varchar(255), in m_correo varchar(255),  in m_id_empresa varchar(255) )
 BEGIN
@@ -169,6 +183,7 @@ BEGIN
 END //
 
 
+drop procedure if exists registroInstructor;
 DELIMITER //
 CREATE PROCEDURE registroInstructor(IN m_nombre VARCHAR(255), IN m_apellido VARCHAR(255), in m_correo varchar(255), in m_cumple date, IN m_descripcion VARCHAR(255), 
 									IN m_img VARCHAR(255), IN id_empresa VARCHAR(255))
