@@ -488,6 +488,7 @@
        $('.list-group > li').click(function() {
         $(this)
         .css('backgroundColor','green')
+   
     });
 
 });
