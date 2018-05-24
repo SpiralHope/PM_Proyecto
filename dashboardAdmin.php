@@ -34,6 +34,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="vendor/jquery-modal/jquery.modal.min.css" rel="stylesheet">
 
  
 
@@ -631,6 +632,8 @@
     <script src='vendor/fullcalendar/locale/es.js'></script>
 
     <script src='vendor/nifty-modal/nifty.js'></script>
+
+    <script src='vendor/jquery-modal/jquery.modal.js'></script>
 
     <script type="text/javascript">
 

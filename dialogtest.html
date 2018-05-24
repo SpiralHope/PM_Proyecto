@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap core CSS-->
+  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
+
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <link href="vendor/FullCalendar/fullcalendar.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="vendor/jquery-modal/jquery.modal.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    .modal{
+    }
+
+    .md-content{
+      margin: -15px -30px;
+    }
+
+    .cursoForm{
+      width: 600px;
+      height: 300px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    #slideContainer{
+      width: 1800px;
+      height: 100%;
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      overflow: hidden;
+
+    }
+
+    .slideCurso{
+      width: 600px;
+      height: 100%;
+      display: inline-block;
+      padding: 5px;
+      margin: 0px;
+    }
+
+    #slide1{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    #slide2{
+      position: absolute;
+      top: 0px;
+      left: 600px;
+    }
+
+    #slide3{
+      position: absolute;
+      top: 0px;
+      left: 1200px;
+    }
+
+    .modal{
+      max-width: 680px;
+    }
+
+    .descCurso{
+      width: 600px;
+      height: 120px;
+    }
+
+    input{
+    transition: color 1.0s  ease-out;
+    color: #6c757d !important;
+
+    }
+    .has-error input{
+        transition: color 1.0s  ease-out;
+        color: #de4444 !important;
+    }
+
+  </style>
+</head>
+<body>
+
+  
+
+	<div id="mainModal" class="modal ">
+    
+
+    <div class="md-content">
+        <div class='md-title'  >
+          <h3 id="cursoTitle" >Curso Nuevo/Nombre</h3>
+        </div>
+        <div class='md-body'>
+          <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                </div>
+              </div>
+          </div>
+          
+          <div class="bodyCursoSlider">
+            <div class="cursoForm">
+
+              <div id="slideContainer">
+
+
+                <div class="slideCurso" id="slide1">
+                  <form id="slide1Form" role="form" data-toggle="validator">
+                    <div class="form-group">
+                      <label for="nombre">Nombre del curso:</label>
+                      <input type="text" class="form-control" id="nombreCurso" data-minlength="6" autocomplete="off"  placeholder="Ingrese el nombre" required>
+                      <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="desc">Password</label>
+                      <textarea type="password" class="form-control" id="descCurso" required></textarea>
+                    </div>
+                  </form>
+                </div>  
+
+
+                <div class="slideCurso" id="slide2">
+                  <form id="slide2Form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                  </form>
+                </div>
+
+                  
+                <div class="slideCurso" id="slide3">
+                  <form id="slide3Form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                  </form>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+         
+          <div class="btn-group">
+            <button class="btn btn-danger button1"  >Cancelar</button>
+            <button class="btn btn-primary button2" >Anterior</button>
+            <button class="btn btn-danger button3"  >Siguiente</button>
+          </div>
+
+        </div>
+      </div>
+	</div>
+
+  <div id="messageModal" class="modal">
+    <p id="msgText"></p>
+    <button class="btn btn-danger button1"  >Cerrar</button>
+  </div>
+
+	<!-- Link to open the modal -->
+	<p><a id='openMainModal' href="#" >Open Modal</a></p>
+
+
+	<!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Moment and FullCalendar Plugins -->
+
+    <script src='vendor/jquery-modal/jquery.modal.js'></script>
+    <script src="vendor/validator/validator.js"></script>
+    <script type="text/javascript">
+
+
+
+      var mainSel = '#mainModal';
+      var btn1Sel = ' .button1';
+      var btn2Sel = ' .button2';
+      var btn3Sel = ' .button3';
+
+
+      var mesgSel = '#messageModal';
+
+
+      
+      var event1Button = function(){
+        $.modal.close();
+      }
+
+      var openMsgModal = function(msg){
+
+        if(msg){
+
+        }
+        
+        $(mesgSel).modal({
+          escapeClose: false,
+          clickClose: false,
+          exishowClose: false,
+          closeExisting: false,
+        });
+      }
+
+      var formularioCurso = function(){
+        var self = this;
+        self.slideActual = 1;
+        self.slideTotales = 3;
+
+        self.container = '#slideContainer';
+
+        self.title = '#cursoTitle';
+        
+        self.afterAnim = function(){
+            $(mainSel + btn1Sel).prop('disabled', false);
+            $(mainSel + btn3Sel).prop('disabled', false);
+            $(mainSel + btn3Sel).html('Siguiente');
+          if(self.slideActual > 1){
+            $(mainSel + btn2Sel).prop('disabled', false);
+          }
+          if(self.slideActual == 1 ){
+            $(self.title).html('Crear Curso/Nombre');
+          }
+          if(self.slideActual == 2 ){
+            $(self.title).html('Crear Curso/Sala');
+          }
+
+          if(self.slideActual == 3 ){
+            $(self.title).html('Crear Curso/Instructor');
+            $(mainSel + btn3Sel).html('Crear');
+
+          }
+        }
+
+        self.nextSlide = function(){
+
+
+          if( $('#slide'+ self.slideActual +'Form').validator('validate').has('.has-error').length > 0){
+            openMsgModal();
+            return;
+          }
+
+          if(self.slideActual < self.slideTotales){
+            self.slideActual ++;
+            $(mainSel + btn1Sel).prop('disabled', true);
+            $(mainSel + btn2Sel).prop('disabled', true);
+            $(mainSel + btn3Sel).prop('disabled', true);
+
+            $(self.container).animate({left: "-=600px", }, 200, self.afterAnim); 
+          }
+        }
+
+        self.prevSlide = function(){
+          if(self.slideActual > 1){
+            self.slideActual --;
+            $(mainSel + btn1Sel).prop('disabled', true);
+            $(mainSel + btn2Sel).prop('disabled', true);
+            $(mainSel + btn3Sel).prop('disabled', true);
+
+            $(self.container).animate({left: "+=600px", }, 200, self.afterAnim);
+          }
+        }
+
+     
+
+        self.crearCurso = function(){
+
+        }
+
+        self.closeCurso = function(){
+          event1Button();
+        }
+
+        self.init = function(){
+          $(mainSel + btn1Sel).click(function(e) {
+            e.preventDefault();
+             self.closeCurso();
+          });
+
+          $(mainSel + btn2Sel).click(function(e) {
+              e.preventDefault();
+              self.prevSlide();
+          });
+
+          $(mainSel + btn3Sel).click(function(e) {
+              e.preventDefault();
+              self.nextSlide();
+          });
+
+        }
+
+      }
+
+      var FormCur = new formularioCurso();
+      FormCur.init();
+
+    	$(document).ready(function($) {
+        $('#openMainModal').on('click', function(e){
+            e.preventDefault();
+            $(mainSel).modal({
+              escapeClose: false,
+              clickClose: false,
+              exishowClose: false,
+              showClose: false 
+            });
+        })
+
+        /*
+          $(mainSel + btn1Sel).click(function(e) {
+              e.preventDefault();
+              event1Button();
+          });
+
+          $(mainSel + btn2Sel).click(function(e) {
+              e.preventDefault();
+              openMsgModal();
+          });
+
+        */
+
+          $(mesgSel + btn1Sel).click(function(e) {
+              e.preventDefault();
+              event1Button();
+          });
+
+
+
+      });
+    </script>
+
+</body>
+</html>
