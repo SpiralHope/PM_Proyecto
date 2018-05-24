@@ -484,9 +484,17 @@
       $("#p4").slideDown(500);
       $('#finish').fadeIn(1000).css({'background-color' : 'green'});
     });
-});
 
+       $('.list-group > li').click(function() {
+        $(this)
+        .css('backgroundColor','green')
+    });
+
+});
     </script>
+
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
