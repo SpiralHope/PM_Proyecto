@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WorkClass - Maestros</title>
+  <title>WorkClass - Perfil</title>
 
   <!-- Bootstrap core CSS -->
 	  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
