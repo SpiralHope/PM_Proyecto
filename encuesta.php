@@ -23,7 +23,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-
+ <link href="css/test/encuestas.css" rel="stylesheet">
  
 
   <style type="text/css">
@@ -261,133 +261,233 @@
 
   </nav>
   <div class="content-wrapper">     
-      <!-- nifty modal modals -->
+
+<div class="container" id="encuesta">
+ 
+
+     <div class="row" id="p1">
+        <div class="col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Como calificarias este curso? 
+                    </h3>
+                </div> 
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r1" type="radio" name="optionsRadios">
+                                    Excelente <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r1" type="radio" name="optionsRadios">
+                                    Bueno  <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r1" type="radio" name="optionsRadios">
+                                    Puede mejorar <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>  <input class="r1" type="radio" name="optionsRadios">
+                                  Malo <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r1" type="radio" name="optionsRadios">
+                                    Pésimo <i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        
+      
+    </div>
+        </div>
+
+
+         <div class="row" id="p2">
+        <div class="col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                       Como calificas al instructor que imparte el curso?
+                    </h3>
+                </div> 
+               <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r2" type="radio" name="optionsRadios">
+                                    Excelente <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r2" type="radio" name="optionsRadios">
+                                    Bueno  <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r2" type="radio" name="optionsRadios">
+                                    Puede mejorar <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>  <input class="r2" type="radio" name="optionsRadios">
+                                  Malo <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r2" type="radio" name="optionsRadios">
+                                    Pésimo <i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+       
+     <div class="row" id="p3">
+        <div class="col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Como calificarias la manera de evaluar de el curso?
+                    </h3>
+                </div> 
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r3" type="radio" name="optionsRadios">
+                                    Excelente <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r3" type="radio" name="optionsRadios">
+                                    Bueno  <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r3" type="radio" name="optionsRadios">
+                                    Puede mejorar <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>  <input class="r3" type="radio" name="optionsRadios">
+                                  Malo <i class=" fa fa-star"></i><i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input class="r3" type="radio" name="optionsRadios">
+                                    Pésimo <i class=" fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        <div class="row" id="p4">
+        <div class="col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                     <h2>Agrega un comentario:</h2>
+  <p>De manera opcional comentanos como te parecio el curso</p>
+  <form>
+    <div class="form-group">
+      <textarea class="form-control" rows="5" id="comment" style="width: 122%;   resize: none;"></textarea>
+    </div>
+  </form>
+</div>
+          
+            </div>
+
+        
+      
+    </div>
+        </div>
 
    
-    <div class="container-fluid">
-        
-    <form action="mailto:emaildelaempresaquehaceelformulario@email.com" method="post" enctype="text/plain">
+</div>
 
-Nombre: <input type="text" name="nombre" size="25" maxlength="50"><br><br>
 
-Apellidos: <input type="text" name="apellidos" size="35" maxlength="100">
 
-<br><br>
+  </div>
+   <button type="button" id="finish" class="btn-lg btn-primary">Enviar</button>
 
-Correo electrónico: <input type="text" value="@" name="correo" size="40" maxlength="100">
 
-<br><br>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script>
+  $("#p2").hide();
+    $("#p3").hide();
+      $("#p4").hide();
+       $("#finish").hide();
 
-Población: <input type="text" name="poblacion" size="15" maxlength="50">
+ $(document).ready(function() {
+   $('.r1').change(function() {
+        $("#p2").slideDown(500);
+    });
 
-<br><br>
+    $('.r2').change(function() {
+       $("#p3").slideDown(500);
+    });
 
-Provincia: <input type="text" name="provincia" size="15" maxlength="50">
+     $('.r3').change(function() {
+      $("#p4").slideDown(500);
+      $('#finish').fadeIn(1000).css({'background-color' : 'green'});
+    });
+});
 
-<table width="100%" border="0" cellspacing="0" cellpadding="10">
-
-<tr>
-
-<td>Edad:
-
-<br>
-
-<input type="radio" name="edad" value="020"> 0-20
-
-<br>
-
-<input type="radio" name="edad" value="2040" checked> 20-40
-
-<br>
-
-<input type="radio" name="edad" value="4060"> 40-60
-
-<br>
-
-<input type="radio" name="edad" value="60100"> 60-100</td>
-
-<td>&iquest;C&oacute;mo nos conociste?<br>
-
-<input type="checkbox" name="conocer">
-
-A trav&eacute;s de un amigo.<br>
-
-<input type="checkbox" name="conocer">
-
-A trav&eacute;s de un buscador.<br>
-
-<input type="checkbox" name="conocer">
-
-Navegando por la red.<br>
-
-<input type="checkbox" name="conocer">
-
-Otros</td>
-
-</tr>
-
-</table>
-
-Opinión sobre nuestra p&aacute;gina web<br>
-
-<textarea cols="40" rows="5" name="opinion">Escriba aquí su opinión...</textarea>
-
-<br><br>
-
-Tiene alguna sugerencia...
-
-<br>
-
-<textarea cols="40" rows="5" name="sugerencias">Escriba aquí sus sugerencias...</textarea>
-
-<br><br>
-
-&iquest;C&uacute;anto navegas por intenet? (Se&ntilde;ala la opci&oacute;n que
-
-m&aacute;s se acerque)<br>
-
-<select name="frecuencia" size="2">
-
-<option value="1">2 horas al día.
-
-<option value="2">4 horas al día.
-
-<option value="3">10 horas a la semana.
-
-<option value="4">20 horas al mes.
-
-</select>
-
-<br>
-
-<br>
-
-<table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
-
-<tr>
-
-<td><div align="center">
-
-<input type="submit" value="Enviar formulario">
-
-</div></td>
-
-<td><div align="center">
-
-<input type="Reset" value="Borrar formulario">
-
-</div></td>
-
-</tr>
-
-</table>
-
-</form>
-      
-        </div>
-    
+    </script>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -404,96 +504,7 @@ m&aacute;s se acerque)<br>
 
     <script src='vendor/nifty-modal/nifty.js'></script>
 
-    <script type="text/javascript">
 
-      var rootUrl = '';
-      $('#logoutConfirmButton').click(function(event) {
-          event.preventDefault();
-
-              var formData = new FormData();
-
-              var url = rootUrl + "services/logoutService.php"
-              $.ajax({
-                type: "POST",
-                url: url,
-                dataType: "json",
-                contentType: false,
-                processData: false,
-                data: formData, //$("#login-form").serialize(), // serializes the form's elements.
-                 success: function(data)
-                 {
-                  if(data.success === true){
-                     window.location.replace(rootUrl + "index.php");
-                  }else{
-                    alert("Error al salir");
-                  }
-                     //alert(data); // show response from the php script.
-                 },
-                 error: function(data){
-
-                 }
-              }).fail(function( jqXHR, textStatus, errorThrown ) {
-                   if(console && console.log){
-                    console.log(errorThrown);
-                    console.log(textStatus);
-                    
-                   }
-                });
-
-        });
-      
-      $('#calendar').fullCalendar({
-        // put your options and callbacks here
-        select: function(start, end) {
-          if(start.isBefore( moment() )) {
-              $('#calendar').fullCalendar('unselect');
-              return false;
-          }
-        }, 
-        dayClick: function(date) {
-          if(!date.isBefore(moment()) || date.isSame(moment(), 'day') ){
-            //alert('a day has been clicked!');
-            
-          $('#modal-1').nifty('show');//({backdrop: 'static', keyboard: false});
-
-            var myevent =   {
-              title  : 'event2',
-              start  : date,
-              nombre: "asdf"
-          }
-            $('#calendar').fullCalendar( 'renderEvent', myevent, true);
-          }
-        },
-
-        events: [
-          {
-              title  : 'Curso de integracion de interfaces dinamicas',
-              start  : '2018-05-02',
-          },
-          {
-              title  : 'Curso 2',
-              start  : '2018-05-05'
-          },
-          {
-              title  : 'Curso 3',
-              start  : '2018-05-09T12:30:00',
-              allDay : false // will make the time show
-          }
-        ],
-        eventClick: function(calEvent, jsEvent, view) {
-
-          alert('Event: ' + calEvent.title);
-          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-          alert('View: ' + view.name);
-
-          if(calEvent.nombre!=null){
-            alert(calEvent.nombre);
-          }
-
-        }
-      })
-
-    </script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
@@ -501,26 +512,8 @@ m&aacute;s se acerque)<br>
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.js"></script>
    
-  </div>
+ 
 
-   <div class="nifty-modal fall" style="z-index: 90002" id="modal-1">
-      <div class="md-content">
-        <div class='md-title'>
-          <h3>Modal Dialog</h3>
-        </div>
-        <div class='md-body'>
-          <p>This is a modal window. You can do the following things with it:</p>
-          <ul>
-            <li><strong>Read:</strong> Modal windows will probably tell you something important so don't forget to read what it says.</li>
-            <li><strong>Look:</strong> modal windows enjoy a certain kind of attention; just look at it and appreciate its presence.</li>
-            <li><strong>Close:</strong> click on the button below to close the modal.</li>
-          </ul>
-          <button class="btn btn-primary md-close">Close me!</button>
-        </div>
-      </div>
-    </div>
-    <div class="md-overlay" style="z-index: 90000"></div>
-  
 </body>
 
 </html>
