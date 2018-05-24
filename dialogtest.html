@@ -21,6 +21,9 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   <link href="vendor/jquery-modal/jquery.modal.min.css" rel="stylesheet">
+  <link href="vendor/jquery-timepicker/jquery.timepicker.css" rel="stylesheet">
+
+
 
   <style type="text/css">
     .modal{
@@ -28,6 +31,12 @@
 
     .md-content{
       margin: -15px -30px;
+    }
+
+
+    .msgModal{
+      width: initial;
+      max-width: initial;
     }
 
     .cursoForm{
@@ -147,6 +156,46 @@
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)  #ce8483;;
     }
 
+    .selector-curso{
+      /*padding-left: 10px;
+      padding-right: 10px;
+*/
+      display: block;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      border-top-left-radius: 0rem;
+      border-bottom-left-radius: 0rem;
+    }
+
+    .picture-curso-sala{
+      width: 130px;
+      height: 130px;
+    }
+
+    .cupo-curso{
+      background-color: #fff;
+      border: solid #eee 1px;
+      padding: 1px;
+      padding-left: 14px;
+      border-radius: 5px;
+    }
+
+    .divider-curso{
+      border: #eee 1px solid;
+      margin-bottom: 18px;
+    }
+
+    .curso-ubi-text{
+      font-size: 12px;
+    }
+
+
   </style>
 </head>
 <body>
@@ -177,13 +226,13 @@
                 <div class="slideCurso" id="slide1">
                   <form id="slide1Form" role="form" data-toggle="validator">
                     <div class="form-group">
-                      <label for="nombre">Nombre del curso:</label>
-                      <input type="text" class="form-control" id="nombreCurso" name="nombre" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
+                      <label for="nombreCurso">Nombre del curso:</label>
+                      <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required tabindex="-1">
                       <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                       <label for="descCurso">Descripcion</label>
-                      <textarea type="text" class="form-control" id="descCurso" name="descCurso" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required></textarea>
+                      <textarea type="text" class="form-control" id="descCurso" name="descCurso" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required tabindex="-1"></textarea>
                       <div class="help-block with-errors"></div>
                     </div>
                   </form>
@@ -191,19 +240,52 @@
 
 
                 <div class="slideCurso" id="slide2">
-                  <h2>Introduzca horario del curso:</h2>
+                  <h6>Introduzca horario del curso:</h6>
                   <form id="slide2Form" role="form" data-toggle="validator">
                     <div class="row">
                       <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"> Hora Inicio</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="horaIni"> Hora Inicio</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="horaIni" name="horaIni" autocomplete="off" required tabindex="-1">
+                          <a href="#" class="input-group-addon selector-curso" id="showHoraIni" tabindex="-1">v</a>
+                        </div>
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="exampleInputPassword1">Hora Final</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="horaFin"> Hora Final</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="horaFin" name="horaFin" autocomplete="off" required tabindex="-1">
+                          <a href="#" class="input-group-addon selector-curso" id="showHoraFin" tabindex="-1">v</a>
+                        </div>
                       </div>
                     </div>
+                    <div class="divider-curso"></div>
+                    <div class="row" id="sala-detalle">
+                      <div class="col-md-4">
+                        <div class="col-md-12">
+                          <img id="img-sala" src="img/placeholder.png" class="picture-curso-sala img-thumbnail">
+                        </div>
+                        <div class="col-md-6">
+                          <div class="cupo-curso">
+                            <i class="fa fa-user" aria-hidden="true"></i><span id="cupo-sala">--</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-8">
+                        <div class="col-md-12">
+                          <label for="sala">Salas Disponibles</label>
+                          <select id="sala" name="sala" autocomplete="off" required tabindex="-1">
+                            <option disabled selected value> -- Seleccione una opcion -- </option>
+
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <p>Ubicacion</p>
+                          <p id="ubi-sala" class="curso-ubi-text text-muted"></p>
+                        </div>
+                      </div>
+                    </div>
+
+
                   </form>
                 </div>
 
@@ -211,13 +293,19 @@
                 <div class="slideCurso" id="slide3">
                   <form id="slide3Form">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      <label for="instructor">Instructores </label>
+                      <select id="instructor" name="instructor" autocomplete="off" required tabindex="-1">
+                        <option disabled selected value> -- Seleccione una opcion -- </option>
+                      </select>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <div class="row">
+                      <div class="col-md-4">
+                          <img id="img-instructor" src="img/placeholder.png" class="picture-curso-sala img-thumbnail">
+                      </div>
+                      <div class="col-md-8">
+                        <p>Descripcion</p>
+                        <p id="desc-instructor" class="curso-desc-text text-muted"></p>
+                      </div>                      
                     </div>
                   </form>
                 </div>
@@ -237,7 +325,7 @@
       </div>
 	</div>
 
-  <div id="messageModal" class="modal">
+  <div id="messageModal" class="modal msgModal">
     <p id="msgText"></p>
     <button class="btn btn-danger button1"  >Cerrar</button>
   </div>
@@ -248,13 +336,39 @@
 
 	<!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <!-- Moment and FullCalendar Plugins -->
 
+    <script src="vendor/moment/moment.js"></script>
     <script src='vendor/jquery-modal/jquery.modal.js'></script>
     <script src="vendor/validator/validator.js"></script>
+    <script src="vendor/jquery-timepicker/jquery.timepicker.js"></script>
+
+
+
     <script type="text/javascript">
 
 
+      $('#horaIni').timepicker({ 'step': 15, 'timeFormat': 'h:i A', 'minTime': '8:00am', 'maxTime': '11:30pm', 'disableTextInput': true});
+      $('#horaFin').timepicker({ 'step': 15, 'timeFormat': 'h:i A', 'minTime': '8:00am', 'maxTime': '11:30pm', 'disableTextInput': true});
+
+      $('#showHoraIni').on('click', function(e){
+        e.preventDefault();
+        $('#horaIni').timepicker('show');
+      });
+
+      $('#showHoraFin').on('click', function(e){
+        e.preventDefault();
+        $('#horaFin').timepicker('show');
+      });
+
+
+      
+
+      $('#horaIni').change(function(event) {
+        //alert('cambio');
+      });
 
       var mainSel = '#mainModal';
       var btn1Sel = ' .button1';
@@ -311,8 +425,8 @@
           if(self.slideActual == 3 ){
             $(self.title).html('Crear Curso/Instructor');
             $(mainSel + btn3Sel).html('Crear');
-
           }
+
         }
 
         self.nextSlide = function(){
@@ -321,6 +435,19 @@
           if( $('#slide'+ self.slideActual +'Form').validator('validate').has('.has-error').length > 0){
             openMsgModal('Llene todos los campos!!!');
             return;
+          }
+
+
+          if(self.slideActual == 2){
+            var timeIni = moment($('#horaIni').val(),"hh:mm A", true);
+            var timeFin = moment($('#horaFin').val(),"hh:mm A", true); 
+            if(!timeIni.isValid() || !timeFin.isValid() ){
+              openMsgModal('Introduzca tiempos validos');
+              return;
+            }else if(timeFin.isBefore(timeIni)){
+              $('#horaIni').val(timeFin.format('hh:mm A'));
+              $('#horaFin').val(timeIni.format('hh:mm A'));
+            }
           }
 
           if(self.slideActual < self.slideTotales){
@@ -344,7 +471,7 @@
           }
         }
 
-     
+      
 
         self.crearCurso = function(){
 
@@ -355,6 +482,8 @@
         }
 
         self.init = function(){
+
+
           $(mainSel + btn1Sel).click(function(e) {
             e.preventDefault();
              self.closeCurso();
@@ -370,8 +499,39 @@
               self.nextSlide();
           });
 
+           $('#sala-detalle').slideUp('fast', function() {
+              
+          });
+
+ 
+          $('#horaIni, #horaFin').on('changeTime', function(event) {
+            var timeIni = moment($('#horaIni').val(),"hh:mm A", true);
+            var timeFin = moment($('#horaFin').val(),"hh:mm A", true); 
+            if(!timeIni.isValid() || !timeFin.isValid() ){
+              return;
+            }else if(timeFin.isBefore(timeIni)){
+              $('#horaFin').val(timeIni.format('hh:mm A'));
+              $('#horaIni').val(timeFin.format('hh:mm A')); 
+
+            }/* Act on the event */
+
+            $('#sala-detalle').slideDown('slow', function() {
+              
+            });
+
+
+          });
+
+           self.reset();
+
+
+
+        }
+
+        self.reset  = function(){
           $(mainSel + btn2Sel).prop('disabled', true);
 
+          $(self.container).animate({left: "=0px", }, 0, self.afterAnim) 
         }
 
       }
@@ -382,6 +542,8 @@
     	$(document).ready(function($) {
         $('#openMainModal').on('click', function(e){
             e.preventDefault();
+
+            FormCur.reset(); 
             $(mainSel).modal({
               escapeClose: false,
               clickClose: false,

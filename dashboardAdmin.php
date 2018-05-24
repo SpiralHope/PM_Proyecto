@@ -145,19 +145,29 @@
     }
 
 
-  .modal-open {
+  .basic-modal.modal-open {
     overflow: hidden;
   }
 
-  .modal {
+  .basic-modal.modal {
     left: 0;
     z-index: 1050;
     display: none;
     overflow: hidden;
     outline: 0;
+
+    vertical-align: initial;
+    max-width: initial;
+    box-sizing: initial;
+    width: initial;
+    background: initial;
+    padding: initial;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+    text-align: initial;
   }
 
-  .modal-open .modal {
+  .basic-modal.modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -630,7 +640,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="basic-modal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
