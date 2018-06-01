@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WorkClass - Estudiante</title>
+  <title>WorkClass - Empleado</title>
 
   <!-- Bootstrap core CSS -->
 	  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
@@ -316,7 +316,7 @@
 			</li>
 		</ol>
 
-	<!-- Area Chart Example
+	<!-- Area Chart Example 
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-area-chart"></i> Progreso del Curso
@@ -327,7 +327,7 @@
 			<div class="card-footer small text-muted" id="part-emp-chart-date"></div>
 		</div> -->
 
-		<!-- Classes -->
+	<!-- Classes -->
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-calendar"></i> Cursos Inscritos
@@ -467,8 +467,9 @@
 				</div>
 			</div>
 			<div class="card-footer small text-muted">Actualizado hoy a las 10:50 AM</div>
-		</div>
--->	</div>
+		</div> -->
+
+	</div>
 
 	<!-- SelfExplanatory -->
 	<footer class="sticky-footer">
@@ -509,7 +510,7 @@
     <!-- Codigo de Horario -->
 	<script type="text/javascript">
 		var rootUrl = '';
-		$('#logoutConfirmButton').click(function(event) {
+		$('#logoutConfirmButton').click(function(event) { 
 			event.preventDefault();
 
 				var formData = new FormData();
@@ -535,7 +536,6 @@
 						console.log(textStatus);
 					}
 				});
-
 		});
       
 		$('#calendar').fullCalendar({
@@ -577,13 +577,12 @@
 				}
 				],
 			eventClick: function(calEvent, jsEvent, view) {
-				alert('Event: ' + calEvent.title + 
-					'\nView: ' + view.name);
+				//alert('Event: ' + calEvent.title + '\nView: ' + view.name);
 				//alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 				//alert();
 
 				if(calEvent.nombre!=null){
-					alert(calEvent.nombre);
+					console.log(calEvent.nombre);
 				}
 
 			}

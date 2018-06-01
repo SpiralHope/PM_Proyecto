@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WorkClass - Maestros</title>
+  <title>WorkClass - Instructor</title>
 
   <!-- Bootstrap core CSS -->
 	  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
@@ -174,6 +174,9 @@
 					</li>
 					<li>
 						<a href="cards.html">Crear Encuesta</a>
+					</li>
+					<li>
+						<a href="cards.html">Invitar Empleados</a>
 					</li>
             	</ul>
 			</li>

@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WorkClass - Perfil</title>
+  <title>WorkClass - Perfil Empleado</title>
 
   <!-- Bootstrap core CSS -->
 	  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
@@ -131,11 +131,8 @@
 			right: 0px;
 		}
 
-	/*  */
+		/* Profile Tweeks */
 		#profiler {
-			text-align: center;
-		}
-		.tstShft{
 			text-align: center;
 		}
 		.tField{
@@ -145,6 +142,7 @@
 			font-weight: bold;
 		}
 		.tCont{
+			padding-left: 10px;
 			text-align: left;
 			font-size: 20px;
 			font-family: "Helvetica", "Verdana", "Arial";
@@ -296,38 +294,45 @@
 					<img src="img/logo.jpg" class="rounded" width="50%">
 					<br/>
 					<br/>
-					<table>
-							<tr class="tstShft">
-								<th class="tField"> Nombre: </th>
-								<th class="tCont"> Airi Satou </th>
-							</tr>
-							<tr>
-								<th class="tField"> Correo: </th>
-								<th class="tCont"> AriSat@outlook.com </th>
-							</tr>
-							<tr>
-								<th class="tField"> Matricula: </th>
-								<th class="tCont"> 1534400 </th>
-							</tr>
-							<tr>
-								<th class="tField"> Diplomas: </th>
-								<th>
-									<a href="#">
-										<img data-toggle="tooltip" title="Lenguaje Ensamblador" src="img/diploma.png" height="30px">
-									</a>
-									<a href="#">
-										<img data-toggle="tooltip" title="C++"src="img/diploma.png" height="30px">
-									</a>
-									<a href="#">
-										<img data-toggle="tooltip" title="PhotoShop" src="img/diploma.png" height="30px">
-									</a>
-									<a href="#">
-										<img data-toggle="tooltip" title="Illustrador" src="img/diploma.png" height="30px">
-									</a>
-								</th>
-							</tr>
-						</tbody>
-					</table>
+					<div class="col-md-12">
+						<table width="100%">
+							<tbody>
+								<tr> 
+									<th class="tField">Cuenta:</th>
+									<th class="tCont">Empleado</th>
+								</tr>
+								<tr> 
+									<th class="tField"> Nombre: </th>
+									<th class="tCont"> Airi Satou </th>
+								</tr>
+								<tr> 
+									<th class="tField"> Correo: </th>
+									<th class="tCont"> AriSat@outlook.com </th>
+								</tr>
+								<tr> 
+									<th class="tField"> Matricula: </th>
+									<th class="tCont"> 1534400 </th>
+								</tr>
+								<tr> 
+									<th class="tField"> Diplomas: </th>
+									<th class="tCont">
+										<a href="#">
+											<img data-toggle="tooltip" title="Lenguaje Ensamblador" src="img/diploma.png" height="30px">
+										</a>
+										<a href="#">
+											<img data-toggle="tooltip" title="C++"src="img/diploma.png" height="30px">
+										</a>
+										<a href="#">
+											<img data-toggle="tooltip" title="PhotoShop" src="img/diploma.png" height="30px">
+										</a>
+										<a href="#">
+											<img data-toggle="tooltip" title="Illustrador" src="img/diploma.png" height="30px">
+										</a>
+									</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

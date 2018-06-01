@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WorkClass - Lenguaje Ensamblador</title>
+  <title>WorkClass - Perfil Instructor</title>
 
   <!-- Bootstrap core CSS -->
 	  <link href="vendor/nifty-modal/nifty.css" rel="stylesheet">
@@ -130,25 +130,45 @@
 			left: initial;
 			right: 0px;
 		}
+
+		/* Profile Tweeks */
+		#profiler {
+			text-align: center;
+		}
+		.tField{
+			text-align: right;
+			vertical-align: text-top;
+			font-size: 25px;
+			font-family: "Helvetica", "Verdana", "Arial";
+			font-weight: bold;
+		}
+		.tCont{
+			padding-left: 10px;
+			text-align: left;
+			font-size: 20px;
+			font-family: "Helvetica", "Verdana", "Arial";
+			font-weight: normal;
+		}
   </style>
 
 </head>
 
 <body class="fixed-nav sticky-footer bg-turquesa" id="page-top">
-<!-- Navigation-->
+<!-- Navigation--> 
   <nav class="navbar navbar-expand-lg navbar-dark bg-turquesa fixed-top" id="mainNav">
    <!--Logo / inicio -->
   	<a class="navbar-brand" href="index.html"> 
   		<img src="img/WorkClass-Logo2.png" height="40px" style="margin: -20px 0px -15px;" alt="WorkClass">
   	</a>
-  	<!--  -->
+  	<!-- Unsure -->
   	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
     </button> 
     <!-- SideBar -->
     <div class="content collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-		<!-- Inicio -->
+
+		<!-- Inicio --> 
 			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
 				<a class="nav-link" href="index.html">
 					<i class="fa fa-fw fa-dashboard"></i>
@@ -156,34 +176,16 @@
 				</a>
 			</li>
 
-		<!-- Cursos
+		<!-- Cursos --> 
 			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+				<a class="nav-link" href="#" data-parent="#exampleAccordion">
 					<i class="fa fa-fw fa-calendar"></i>
 					<span class="nav-link-text">Cursos</span>
 				</a>
-				<ul class="sidenav-second-level collapse" id="collapseComponents">
-					<li>
-						<a href="navbar.html">Inscripcion de Cursos</a>
-					</li>
-					<li>
-						<a href="cards.html">Ver Cursos Completados</a>
-					</li>
-					<li>
-						<a href="cards.html">Ver Cursos Pendientes</a>
-					</li>
-            	</ul>
-			</li> -->
-
-		<!-- Progresso -->
-			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-				<a class="nav-link" href="#"> <!-- href="charts.html" -->
-					<i class="fa fa-fw fa-area-chart"></i>
-					<span class="nav-link-text">Progresso</span>
-				</a>
+				
 			</li>
 
-		<!-- Horarios -->
+		<!-- Horarios --> 
 			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
 				<a class="nav-link" href="#"> <!-- href="tables.html" -->
 					<i class="fa fa-fw fa-table"></i>
@@ -191,30 +193,8 @@
 				</a>
 			</li>
 
-		<!-- Compañeros de classe -->
-			<li class="nav-item" data-toggle="tooltip" data-placement="top" title="Estudiantes">
-				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion"> 
-					<i class="fa fa-fw fa-address-book"></i>
-					<span class="nav-link-text">Compañeros</span>
-				</a>
-				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-					<li>
-						<a href="login.html">Ver Listas</a>
-					</li>
-					<li>
-						<a href="register.html">Mandar Correo</a>
-					</li>
-				</ul>
-			</li> 
-
-		<!-- Encuestas -->
-			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Encuestas">
-				<a class="nav-link" href="#">
-					<i class="fa fa-fw fa-address-book"></i>
-					<span class="nav-link-text">Encuestas</span>
-				</a>
-			</li>
 		</ul>
+
 		<!-- SideBar Btm -->
 		<ul class="navbar-nav sidenav-toggler"> 
 			<li class="nav-item">
@@ -305,130 +285,64 @@
 <!-- Content Box -->
   <div class="content-wrapper">
 	<div class="container-fluid">
-		<!-- Breadcrumbs (Content Nav) -->
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="#">Dashboard</a>
-			</li>
-			<li class="breadcrumb-item active" id="active-tab">Lenguaje Ensamblador
-			</li>
-		</ol>
 
-	<!-- Calificaciones -->
 		<div class="card mb-3">
 			<div class="card-header">
-				<i class="fa fa-area-chart"></i> Progreso del Curso
+				<i class="fa fa-fw fa-address-book"></i><strong>Airi Satou</strong>
 			</div>
 			<div class="card-body">
-				<canvas id="myAreaChart" width="100%" height="30"></canvas>
-			</div>
-			<div class="card-footer small text-muted" id="part-emp-chart-date"></div>
-		</div>
-
-	<!-- Calendario / Pendientes -->
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-calendar"></i> Horario / Pendientes
-			</div>
-			<div class="card-body">
-				<div id="calendar" width="100%"></div>
-			</div>
-			<div class="card-footer small text-muted">
-			</div>
-		</div>
-
-	<!-- Student List -->
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-table"></i> Lista de Compañeros Empleados
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-						<thead>
+				<div id="profiler" width="100%">
+					<img src="img/logo.jpg" class="rounded" width="50%">
+					<br/>
+					<br/>
+					<table width="100%">
 							<tr>
-								<th>Matricula</th>
-								<th>Nombre</th>
-								<th>Correo</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>1534000</th>
-								<th>Tiger Nixon</th>
-								<th>jambelaya@hotmail.com</th>
+								<th class="tField">Cuenta:</th>
+								<th class="tCont">Instructor</th>
 							</tr>
 							<tr>
-								<th>1534020</th>
-								<th>Garrett Winters</th>
-								<th>GremMaister@yahoo.com</th>
+								<th class="tField"> Nombre: </th>
+								<th class="tCont"> Airi Satou </th>
 							</tr>
 							<tr>
-								<th>1534002</th>
-								<th>Ashton Cox</th>
-								<th>Ash_CX@yahoo.com</th>
+								<th class="tField"> Correo: </th>
+								<th class="tCont"> AriSat@outlook.com </th>
 							</tr>
 							<tr>
-								<th>1534300</th>
-								<th>Cedric Kelly</th>
-								<th>Cedman@hotmail.com</th>
+								<th class="tField"> Matricula: </th>
+								<th class="tCont"> 1534400 </th>
 							</tr>
 							<tr>
-								<th>1534400</th>
-								<th>Airi Satou</th>
-								<th>AriSat@outlook.com</th>
-							</tr>
-							<tr>
-								<th>1534050</th>
-								<th>Brielle Williamson</th>
-								<th>Briilie@hotmail.com</th>
-							</tr>
-							<tr>
-								<th>1534600</th>
-								<th>Herrod Chandler</th>
-								<th>Herrolder@yahoo.com.mx</th>
-							</tr>
-							<tr>
-								<th>1534007</th>
-								<th>Rhona Davidson</th>
-								<th>RhonaD@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534008</th>
-								<th>Colleen Hurst</th>
-								<th>cHurtst@hotmail.com</th>
-							</tr>
-							<tr>
-								<th>1534900</th>
-								<th>Sonya Frost</th>
-								<th>SonyFrost@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534010</th>
-								<th>Jena Gaines</th>
-								<th>JenGlen@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534110</th>
-								<th>Quinn Flynn</th>
-								<th>PuddinPop@yahoo.com</th>
+								<th class="tField"> Empartiendo: </th>
+								<th class="tCont">
+									<a href="#"> 
+										<img data-toggle="tooltip" title="C++" src="img/PM-Logo-cCpp.gif" height="30px">
+									</a>
+									<a href="#">
+										<img data-toggle="tooltip" title="JavaScript" src="img/PM-Logo-cJS.gif" height="30px">
+									</a>
+									<a href="#">
+										<img data-toggle="tooltip" title="HTML" src="img/PM-Logo-cHTML.gif" height="30px">
+									</a>
+									<a href="#">
+										<img data-toggle="tooltip" title="PHP" src="img/PM-Logo-cPHP.gif" height="30px">
+									</a>
+								</th>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<div class="card-footer small text-muted">Actualizado hoy a las 10:50 AM</div>
 		</div>
-	</div>
 
 	<!-- SelfExplanatory -->
-	<footer class="sticky-footer">
-		<div class="container">
-			<div class="text-center">
-				<small>Copyright © WorkClass 2018</small>
+		<footer class="sticky-footer">
+			<div class="container">
+				<div class="text-center">
+					<small>Copyright © WorkClass 2018</small>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 
 	<!-- Scroll-to-Top Btn -->
 		<a class="scroll-to-top rounded" href="#page-top">
@@ -489,7 +403,6 @@
 		});
       
 		$('#calendar').fullCalendar({
-        // put your options and callbacks here
 			select: function(start, end) {
 				if(start.isBefore( moment() )) {
 					$('#calendar').fullCalendar('unselect');
@@ -527,8 +440,9 @@
 				}
 				],
 			eventClick: function(calEvent, jsEvent, view) {
-				alert('Event: ' + calEvent.title + 'View: ' + view.name);
-				// alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				alert('Event: ' + calEvent.title + 
+					'\nView: ' + view.name);
+				//alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 				//alert();
 
 				if(calEvent.nombre!=null){
@@ -546,30 +460,9 @@
 	<script src="js/sb-admin-charts.js"></script>
   </div>
 
-  <div class="nifty-modal fall" style="z-index: 90002" id="modal-1">
-		<div class="md-content">
-			<div class='md-title'>
-				<h3>Modal Dialog</h3>
-			</div>
-			<div class='md-body'>
-				<p>This is a modal window. You can do the following things with it:</p>
-				<ul>
-					<li><strong>Read:</strong> Modal windows will probably tell you something important so don't forget to read what it says.</li>
-					<li><strong>Look:</strong> modal windows enjoy a certain kind of attention; just look at it and appreciate its presence.</li>
-					<li><strong>Close:</strong> click on the button below to close the modal.</li>
-				</ul>
-				<button class="btn btn-primary md-close">Close me!</button>
-			</div>
-		</div>
-    </div>
+
     <div class="md-overlay" style="z-index: 90000"></div>
 
   </div>
 </body>
 </html>
-
-
-
-
-
-
