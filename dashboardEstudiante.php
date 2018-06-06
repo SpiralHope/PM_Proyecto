@@ -316,158 +316,99 @@
 			</li>
 		</ol>
 
-	<!-- Area Chart Example 
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-area-chart"></i> Progreso del Curso
-			</div>
-			<div class="card-body">
-				<canvas id="myAreaChart" width="100%" height="30"></canvas>
-			</div>
-			<div class="card-footer small text-muted" id="part-emp-chart-date"></div>
-		</div> -->
-
-	<!-- Classes -->
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-calendar"></i> Cursos Inscritos
-			</div>
-			<div class="card-body">
-				<div id="ListaClasses" width="100%">
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="C++" data-placement="bottom" src="img/PM-Logo-cCpp.gif" height="40px">
-					</a>
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="JavaScript" data-placement="bottom" src="img/PM-Logo-cJS.gif" height="40px">
-					</a>
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="Arte Digital" data-placement="bottom" src="img/PM-Logo-cArteD.gif" height="40px">
-					</a>
+		<div class="row">
+		<!-- Calendario / Pendientes -->
+			<div class="col-md-4">
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-calendar"></i> <strong>Horario</strong> 
+					</div>
+					<div class="card-body">
+						<div id="calendar" width="100%"></div>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-calendar"></i> Diplomas Logrado
-			</div>
-			<div class="card-body">
-				<div id="DiplomasLogrados">
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="C" data-placement="bottom" src="img/diploma.png" height="40px">
-					</a>
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="Microprosesadores" data-placement="bottom" src="img/diploma.png" height="40px">
-					</a>
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="Lenguaje Ensamblador" data-placement="bottom" src="img/diploma.png" height="40px">
-					</a>
-					<a href="#">
-						<img class="Icns" data-toggle="tooltip" title="PhotoShop" data-placement="bottom" src="img/diploma.png" height="40px">
-					</a>
+
+		<!-- Classes / Diplomas -->
+			<div class="col-md-8">
+			<!-- Classes --> 
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-calendar"></i> <strong>Cursos Inscritos</strong>
+					</div>
+					<div class="card-body">
+						<div id="ListaClasses" width="100%">
+							<a href="#" data-toggle="tooltip" data-placement="bottom" title="C++">
+								<img class="Icns" src="img/PM-Logo-cCpp.gif" height="40px">
+							</a>
+							<a href="#" data-toggle="tooltip" data-placement="bottom" title="JavaScript">
+								<img class="Icns" src="img/PM-Logo-cJS.gif" height="40px">
+							</a>
+							<a href="#" data-toggle="tooltip" data-placement="bottom" title="Arte Digital">
+								<img class="Icns" src="img/PM-Logo-cArteD.gif" height="40px">
+							</a>
+						</div>
+					</div>
+				</div>
+
+			<!-- Reminders -->
+				<div class="card md-3">
+					<div class="card-header">
+						<i class="fa fa-calendar"></i> <strong>Recordatorios</strong>
+					</div>
+					<div class="card-body">
+						<ul class="nav nav-pills">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+									C++ <span class="badge badge-danger">3</span>
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Tarea 3 <span class="badge badge-danger">11/06</span></a>
+									<a class="dropdown-item" href="#">Tarea 4 <span class="badge badge-warning">18/06</span></a>
+									<a class="dropdown-item" href="#">Tarea 5 <span class="badge badge-info">25/06</span></a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+									JavaScript <span class="badge badge-warning">1</span>
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Tarea 4 <span class="badge badge-warning">13/06</span></a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link disabled" href="#">Dibujo Artistico <span class="badge badge-secondary">0</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			<!-- Diplomas --> 
+				<div class="card mb-3">
+					<div class="card-header">
+						<!-- <i class="fa fa-calendar"></i> --> <strong>Diplomas Logrado</strong>
+					</div>
+					<div class="card-body">
+						<div id="DiplomasLogrados">
+							<a href="#">
+								<img class="Icns" data-toggle="tooltip" title="C" data-placement="bottom" src="img/diploma.png" height="40px">
+							</a>
+							<a href="#">
+								<img class="Icns" data-toggle="tooltip" title="Microprosesadores" data-placement="bottom" src="img/diploma.png" height="40px">
+							</a>
+							<a href="#">
+								<img class="Icns" data-toggle="tooltip" title="Lenguaje Ensamblador" data-placement="bottom" src="img/diploma.png" height="40px">
+							</a>
+							<a href="#">
+								<img class="Icns" data-toggle="tooltip" title="PhotoShop" data-placement="bottom" src="img/diploma.png" height="40px">
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
+
 		</div>
-
-				
-
-				
-			
-
-	<!-- Calendario / Pendientes -->
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-calendar"></i> Horario / Pendientes
-			</div>
-			<div class="card-body">
-				<div id="calendar" width="100%"></div>
-			</div>
-			<div class="card-footer small text-muted">
-			</div>
-		</div>
-
-	<!-- Student List 
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-table"></i> Lista de Compañeros
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-						<thead>
-							<tr>
-								<th>Matricula</th>
-								<th>Nombre</th>
-								<th>Correo</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>1534000</th>
-								<th>Tiger Nixon</th>
-								<th>jambelaya@hotmail.com</th>
-							</tr>
-							<tr>
-								<th>1534020</th>
-								<th>Garrett Winters</th>
-								<th>GremMaister@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534002</th>
-								<th>Ashton Cox</th>
-								<th>Ash_CX@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534300</th>
-								<th>Cedric Kelly</th>
-								<th>Cedman@hotmail.com</th>
-							</tr>
-							<tr>
-								<th>1534400</th>
-								<th>Airi Satou</th>
-								<th>AriSat@outlook.com</th>
-							</tr>
-							<tr>
-								<th>1534050</th>
-								<th>Brielle Williamson</th>
-								<th>Briilie@hotmail.com</th>
-							</tr>
-							<tr>
-								<th>1534600</th>
-								<th>Herrod Chandler</th>
-								<th>Herrolder@yahoo.com.mx</th>
-							</tr>
-							<tr>
-								<th>1534007</th>
-								<th>Rhona Davidson</th>
-								<th>RhonaD@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534008</th>
-								<th>Colleen Hurst</th>
-								<th>cHurtst@hotmail.com</th>
-							</tr>
-							<tr>
-								<th>1534900</th>
-								<th>Sonya Frost</th>
-								<th>SonyFrost@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534010</th>
-								<th>Jena Gaines</th>
-								<th>JenGlen@yahoo.com</th>
-							</tr>
-							<tr>
-								<th>1534110</th>
-								<th>Quinn Flynn</th>
-								<th>PuddinPop@yahoo.com</th>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="card-footer small text-muted">Actualizado hoy a las 10:50 AM</div>
-		</div> -->
 
 	</div>
 
@@ -480,35 +421,39 @@
 		</div>
 	</footer>
 
-	<!-- Scroll-to-Top Btn -->
-	<a class="scroll-to-top rounded" href="#page-top">
-		<i class="fa fa-angle-up"></i>
-	</a>
-
-
+	<!-- Scroll-to-Top Btn --> 
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fa fa-angle-up"></i>
+		</a>
 
 <!-- Librerias -->
-	<!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap core JavaScript--> 
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+		<script src="vendor/chart.js/Chart.min.js"></script>
+		<script src="vendor/datatables/jquery.dataTables.js"></script>
+		<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
  
     <!-- Moment and FullCalendar Plugins -->
     <script src="vendor/moment/moment.js"></script>
     <script src="vendor/FullCalendar/fullcalendar.js"></script>
+    <!--
     <script src='vendor/fullcalendar/locale/es.js'></script>
 
-    <script src='vendor/nifty-modal/nifty.js'></script>
+    <script src='vendor/nifty-modal/nifty.js'></script> -->
 
     <!-- Codigo de Horario -->
 	<script type="text/javascript">
+		$(document).ready( function(){
+			$('[data-toggle="tooltip"]').tooltip(); 
+		});
+		
 		var rootUrl = '';
 		$('#logoutConfirmButton').click(function(event) { 
 			event.preventDefault();
@@ -539,7 +484,8 @@
 		});
       
 		$('#calendar').fullCalendar({
-        // put your options and callbacks here
+			defaultView: 'agendaDay',
+			height: 350,
 			select: function(start, end) {
 				if(start.isBefore( moment() )) {
 					$('#calendar').fullCalendar('unselect');
@@ -576,6 +522,7 @@
 					allDay : false // will make the time show
 				}
 				],
+
 			eventClick: function(calEvent, jsEvent, view) {
 				//alert('Event: ' + calEvent.title + '\nView: ' + view.name);
 				//alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
