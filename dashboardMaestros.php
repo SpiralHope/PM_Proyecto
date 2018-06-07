@@ -296,52 +296,55 @@
 			</li>
 		</ol>
 
+		<div class="row">
+		<!-- Calendario / Pendientes --> 
+			<div class="col-md-4">
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-calendar"></i> Pendientes de la Semana
+					</div>
+					<div class="card-body">
+						<div id="dCal" width="100%"></div>
+					</div>
+				</div>
+			</div>
 
-	<!-- Area Chart Example
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-area-chart"></i> Progreso del Curso
-			</div>
-			<div class="card-body">
-				<canvas id="myAreaChart" width="100%" height="30"></canvas>
-			</div>
-			<div class="card-footer small text-muted" id="part-emp-chart-date"></div>
-		</div> -->
+		<!-- Cursos Partiendo / wSchedule -->
+			<div class="col-md-8">
+			<!-- Cursos Partiendo --> 
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-calendar"></i> Cursos Actuales
+					</div>
+					<div class="card-body" >
+						<div id="ListaClasses" width="100%"></div>
+						<a href="#">
+							<img class="Icns" data-toggle="tooltip" title="C++" data-placement="bottom" src="img/PM-Logo-cCpp.gif" height="40px">
+						</a>
+						<a href="#">
+							<img class="Icns" data-toggle="tooltip" title="HTML" data-placement="bottom" src="img/PM-Logo-cHTML.gif" height="40px">
+						</a>
+						<a href="#">
+							<img class="Icns" data-toggle="tooltip" title="JavaScript" data-placement="bottom" src="img/PM-Logo-cJS.gif" height="40px">
+						</a>
+						<a href="#">
+							<img class="Icns" data-toggle="tooltip" title="PHP" data-placement="bottom" src="img/PM-Logo-cPHP.gif" height="40px">
+						</a>
+					</div>
+				</div>
 
-	<!-- Cursos Partiendo -->
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-calendar"></i> Cursos Actuales
-			</div>
-			<div class="card-body" >
-				<div id="ListaClasses" width="100%"></div>
-				<a href="#">
-					<img class="Icns" data-toggle="tooltip" title="C++" data-placement="bottom" src="img/PM-Logo-cCpp.gif" height="40px">
-				</a>
-				<a href="#">
-					<img class="Icns" data-toggle="tooltip" title="HTML" data-placement="bottom" src="img/PM-Logo-cHTML.gif" height="40px">
-				</a>
-				<a href="#">
-					<img class="Icns" data-toggle="tooltip" title="JavaScript" data-placement="bottom" src="img/PM-Logo-cJS.gif" height="40px">
-				</a>
-				<a href="#">
-					<img class="Icns" data-toggle="tooltip" title="PHP" data-placement="bottom" src="img/PM-Logo-cPHP.gif" height="40px">
-				</a>
+			<!-- wSchedule --> 
+				<div  class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-calendar"></i> Horario de la Semana
+					</div>
+					<div class="card-body">
+						<div id="wCal" width="100%"></div>
+					</div>
+				</div>
+
 			</div>
 		</div>
-
-	<!-- Calendario / Pendientes -->
-		<div class="card mb-3">
-			<div class="card-header">
-				<i class="fa fa-calendar"></i> Horario / Pendientes
-			</div>
-			<div class="card-body">
-				<div id="calendar" width="100%"></div>
-			</div>
-			<div class="card-footer small text-muted">
-			</div>
-		</div>
-
 	<!-- Student List 
 		<div class="card mb-3">
 			<div class="card-header">
@@ -492,16 +495,16 @@
 				});
 
 		});
-      
-		$('#calendar').fullCalendar({
-        // put your options and callbacks here
-			select: function(start, end) {
+
+		$('#wCal').fullCalendar({
+			defaultView: 'agendaWeek',
+			select: function(start, end) { 
 				if(start.isBefore( moment() )) {
 					$('#calendar').fullCalendar('unselect');
 					return false;
 				}
 			}, 
-			dayClick: function(date) {
+			dayClick: function(date) { 
 				if(!date.isBefore(moment()) || date.isSame(moment(), 'day') ){
 					//alert('a day has been clicked!');
 					$('#modal-1').nifty('show');//({backdrop: 'static', keyboard: false});
@@ -515,23 +518,36 @@
 				}
 			},
 
-			events: 
-				[ 
-				{
-					title  : 'Curso de integracion de interfaces dinamicas',
-					start  : '2018-05-02',
+			events:
+			[ 
+				{	title  : 'PHP', 
+					start  : '2018-06-05T03:00:00',
+					end    : '2018-06-05T06:00:00',
+					overlap: false,
 				},
-				{
-					title  : 'Curso 2',
-					start  : '2018-05-05'
+				{	title  : 'C++',
+					start  : '2018-06-04T05:00:00',
+					end    : '2018-06-04T08:00:00',
+					overlap: false
 				},
-				{
-					title  : 'Curso 3',
-					start  : '2018-05-09T12:30:00',
-					allDay : false // will make the time show
+				{	title  : 'C++',
+					start  : '2018-06-06T05:00:00',
+					end    : '2018-06-06T08:00:00',
+					overlap: false
+				},
+				{	title  : 'C++',
+					start  : '2018-06-08T05:00:00',
+					end    : '2018-06-08T08:00:00',
+					overlap: false
+				},
+				{	title  : 'JavaScript',
+					start  : '2018-06-09T12:30:00',
+					end    : '2018-06-09T03:30:00',
+					overlap: false,
+					//allDay : false // will make the time show
 				}
-				],
-			eventClick: function(calEvent, jsEvent, view) {
+			],
+			/* eventClick: function(calEvent, jsEvent, view) { 
 				alert('Event: ' + calEvent.title + 
 					'\nView: ' + view.name);
 				//alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
@@ -541,7 +557,73 @@
 					alert(calEvent.nombre);
 				}
 
-			}
+			} */
+		}),
+      
+		$('#dCal').fullCalendar({
+        // put your options and callbacks here
+        	defaultView: 'listWeek',
+			height: 575,
+			select: function(start, end) { 
+				if(start.isBefore( moment() )) {
+					$('#calendar').fullCalendar('unselect');
+					return false;
+				}
+			}, 
+			dayClick: function(date) { 
+				if(!date.isBefore(moment()) || date.isSame(moment(), 'day') ){
+					//alert('a day has been clicked!');
+					$('#modal-1').nifty('show');//({backdrop: 'static', keyboard: false});
+
+					var myevent =   {
+									title  : 'event2',
+									//start  : date,
+									//nombre: "asdf"
+					}
+					$('#calendar').fullCalendar( 'renderEvent', myevent, true);
+				}
+			},
+
+			events: 
+			[ 
+				{	title  : 'PHP - Recursividad', 
+					start  : '2018-06-05T03:00:00',
+					end    : '2018-06-05T06:00:00',
+					overlap: false,
+				},
+				{	title  : 'C++ - Arreglos', 
+					start  : '2018-06-04T05:00:00',
+					end    : '2018-06-04T06:00:00',
+					overlap: false
+				},
+				{	title  : 'C++ - Cadenas', 
+					start  : '2018-06-06T05:00:00',
+					end    : '2018-06-06T06:00:00',
+					overlap: false,
+				},
+				{	title  : 'C++ - Punteros', 
+					start  : '2018-06-08T05:00:00',
+					end    : '2018-06-08T06:00:00',
+					overlap: false
+				},
+				{	title  : 'JavaScript - GET,POST',
+					start  : '2018-06-09T12:30:00',
+					end    : '2018-06-09T03:30:00',
+					overlap: false,
+					//allDay : false // will make the time show
+				}
+			],
+			/* eventClick: function(calEvent, jsEvent, view) { 
+				alert('Event: ' + calEvent.title + 
+					'\nView: ' + view.name);
+				//alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				//alert();
+
+				if(calEvent.nombre!=null){
+					alert(calEvent.nombre);
+				}
+
+			} */
 		})
 
 		//$('#ListaClasses').

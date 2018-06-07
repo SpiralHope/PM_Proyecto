@@ -342,8 +342,8 @@
 							<a href="#" data-toggle="tooltip" data-placement="bottom" title="C++">
 								<img class="Icns" src="img/PM-Logo-cCpp.gif" height="40px">
 							</a>
-							<a href="#" data-toggle="tooltip" data-placement="bottom" title="JavaScript">
-								<img class="Icns" src="img/PM-Logo-cJS.gif" height="40px">
+							<a href="#">
+								<img class="Icns" data-toggle="tooltip" title="JavaScript" data-placement="bottom" src="img/PM-Logo-cJS.gif" height="40px">
 							</a>
 							<a href="#" data-toggle="tooltip" data-placement="bottom" title="Arte Digital">
 								<img class="Icns" src="img/PM-Logo-cArteD.gif" height="40px">
