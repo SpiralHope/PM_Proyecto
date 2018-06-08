@@ -286,16 +286,21 @@
   <div class="content-wrapper">
 	<div class="container-fluid">
 
+		<div class="col-md-10 offset-md-1">
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-fw fa-address-book"></i><strong>Airi Satou</strong>
 			</div>
+
 			<div class="card-body">
 				<div id="profiler" width="100%">
+				<!-- Student Pic -->
 					<img src="img/logo.jpg" class="rounded" width="50%">
 					<br/>
 					<br/>
+				<!-- Student Info -->
 					<table width="100%">
+						<tbody>
 							<tr>
 								<th class="tField">Cuenta:</th>
 								<th class="tCont">Instructor</th>
@@ -307,10 +312,6 @@
 							<tr>
 								<th class="tField"> Correo: </th>
 								<th class="tCont"> AriSat@outlook.com </th>
-							</tr>
-							<tr>
-								<th class="tField"> Matricula: </th>
-								<th class="tCont"> 1534400 </th>
 							</tr>
 							<tr>
 								<th class="tField"> Empartiendo: </th>
@@ -333,6 +334,8 @@
 					</table>
 				</div>
 			</div>
+
+		</div>
 		</div>
 
 	<!-- SelfExplanatory -->

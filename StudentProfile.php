@@ -137,6 +137,7 @@
 		}
 		.tField{
 			text-align: right;
+			vertical-align: text-top;
 			font-size: 25px;
 			font-family: "Helvetica", "Verdana", "Arial";
 			font-weight: bold;
@@ -285,56 +286,60 @@
   <div class="content-wrapper">
 	<div class="container-fluid">
 
+		<div class="col-md-10 offset-md-1">
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-fw fa-address-book"></i><strong>Airi Satou</strong>
 			</div>
+
 			<div class="card-body">
 				<div id="profiler" width="100%">
+				<!-- Student Pic -->
 					<img src="img/logo.jpg" class="rounded" width="50%">
 					<br/>
 					<br/>
-					<div class="col-md-12">
-						<table width="100%">
-							<tbody>
-								<tr> 
-									<th class="tField">Cuenta:</th>
-									<th class="tCont">Empleado</th>
-								</tr>
-								<tr> 
-									<th class="tField"> Nombre: </th>
-									<th class="tCont"> Airi Satou </th>
-								</tr>
-								<tr> 
-									<th class="tField"> Correo: </th>
-									<th class="tCont"> AriSat@outlook.com </th>
-								</tr>
-								<tr> 
-									<th class="tField"> Matricula: </th>
-									<th class="tCont"> 1534400 </th>
-								</tr>
-								<tr> 
-									<th class="tField"> Diplomas: </th>
-									<th class="tCont">
-										<a href="#">
-											<img data-toggle="tooltip" title="Lenguaje Ensamblador" src="img/diploma.png" height="30px">
-										</a>
-										<a href="#">
-											<img data-toggle="tooltip" title="C++"src="img/diploma.png" height="30px">
-										</a>
-										<a href="#">
-											<img data-toggle="tooltip" title="PhotoShop" src="img/diploma.png" height="30px">
-										</a>
-										<a href="#">
-											<img data-toggle="tooltip" title="Illustrador" src="img/diploma.png" height="30px">
-										</a>
-									</th>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+				<!-- Student Info -->
+					<table width="100%">
+						<tbody>
+							<tr> 
+								<th class="tField">Cuenta:</th>
+								<th class="tCont">Empleado</th>
+							</tr>
+							<tr> 
+								<th class="tField"> Nombre: </th>
+								<th class="tCont"> Airi Satou </th>
+							</tr>
+							<tr> 
+								<th class="tField"> Correo: </th>
+								<th class="tCont"> AriSat@outlook.com </th>
+							</tr>
+							<tr> 
+								<th class="tField"> Matricula: </th>
+								<th class="tCont"> 1534400 </th>
+							</tr>
+							<tr> 
+								<th class="tField"> Diplomas: </th>
+								<th class="tCont">
+									<a href="#">
+										<img data-toggle="tooltip" title="Lenguaje Ensamblador" src="img/diploma.png" height="30px">
+									</a>
+									<a href="#">
+										<img data-toggle="tooltip" title="C++"src="img/diploma.png" height="30px">
+									</a>
+									<a href="#">
+										<img data-toggle="tooltip" title="PhotoShop" src="img/diploma.png" height="30px">
+									</a>
+									<a href="#">
+										<img data-toggle="tooltip" title="Illustrador" src="img/diploma.png" height="30px">
+									</a>
+								</th>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
+
+		</div>
 		</div>
 
 	<!-- SelfExplanatory -->
