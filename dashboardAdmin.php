@@ -211,7 +211,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                <a href="navbar.html">Agendar Nuevo Curso</a>
+                <a href="dashboardAdmin_CrearCurso.php">Agendar Nuevo Curso</a>
               </li>
               <li>
                 <a href="cards.html">Ver Cursos</a>
@@ -402,16 +402,6 @@
           <canvas id="myAreaChart" width="100%" height="30"></canvas>
         </div>
         <div class="card-footer small text-muted" id="part-emp-chart-date"></div>
-      </div>
-
-      <!-- Calendar -->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-calendar"></i> Planeador de Cursos</div>
-        <div class="card-body">
-          <div id="calendar" width="100%"></div>
-        </div>
-        <div class="card-footer small text-muted"></div>
       </div>
 
       <!-- Example DataTables Card-->

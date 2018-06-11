@@ -335,15 +335,16 @@
     
 
       <div class="contenedor-formulario">
-          <form id="slide1Form" role="form" data-toggle="validator">
+          <form id="slide1Form" role="form" data-toggle="validator" method="POST" enctype="multipart/form-data" action="/services/services.php">
+            <input type="text" class="form-control" id="method" name="method" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required hidden value="crear_sala">
             <div class="form-group">
-              <label for="nombreCurso">Sala</label>
-              <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
+              <label for="nombreSala">Sala</label>
+              <input type="text" class="form-control" id="nombreSala" name="nombreSala" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-              <label for="descCurso">Ubicacion</label>
-              <textarea type="text" class="form-control" id="descCurso" name="descCurso" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required></textarea>
+              <label for="descSala">Ubicacion</label>
+              <textarea type="text" class="form-control" id="descSala" name="descSala" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required></textarea>
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">

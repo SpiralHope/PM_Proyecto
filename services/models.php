@@ -61,29 +61,34 @@
 		    }
 
 	  	}
-	  	
-/*
-	  	function createUser($userData){
 
-		    if(!$_SQL->validateFile("photo")){
+	};
+
+
+	class Sala{
+
+	  	function crear($id_empresa, $nombreSala, $descSala,  $cupo, $img ){
+
+	  		
+		    if(!isset($id_empresa, $nombreSala, $descSala,  $cupo, $img) ){
+		        return false;
+		    }
+
+		    $_SQL =  $GLOBALS["_SQL"] ;
+
+		    if( !$_SQL->validateFile($img) ){
 		    	return false;
 		    }
-		    foreach ($userData as $i){
-		        if($i == ""){
-		        	return false;
-		        }
-		    }
+	
+			$imagen = $_SQL->uploadFile($img);
+
+			if($imagen == null)
+				return false;
+
+			$_SQL("CALL crear_sala(?, ?, ?, ?, ?)", [$nombreCurso, $descSala, $cupo, $imagen, $id_empresa ], "ssisi");
 		    
-		    if(!isset($userData["password"], $userData["username"], $userData["name"], $userData["father_surname"], $userData["mother_surname"], $userData["email"], $userData["birthday"], $userData["phone"])){
-		         return false;
-		    }
-
-
-		    $sha1Password = sha1($userData["password"]);
-			$myPath = $_SQL->uploadFile( 'photo' , false);
-			$_SQL("CALL signup(?, ?, ?, ?, ?, ?, ?, ?, ?)", [$userData["name"], $userData["father_surname"], $userData["mother_surname"], $userData["email"], $sha1Password, $userData["birthday"], $userData["phone"], $myPath, false  ], "ssssssssi");
 		    $row = $_SQL->getRow(1);
-		    if ($row["RESPONSE"] == 1){
+		    if ($row["completado"] == 1){
 		    	return true;
 		    }
 		    else{
@@ -92,7 +97,7 @@
 
 	  	}
 
-*/
 	};
+
 
 ?>

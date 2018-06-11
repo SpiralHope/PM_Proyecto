@@ -1,6 +1,34 @@
 use workclas_PM;
 
 
+drop table if exists imgTotales;
+create table imgTotales(
+	id int,
+    total int
+);
+
+insert into imgTotales(id, total) values(1,0);
+
+
+drop procedure if exists actualizarImg;
+DELIMITER //
+CREATE procedure actualizarImg()
+BEGIN
+    update imgTotales set total = total+1 where id = 1;
+    
+END //
+DELIMITER ;
+
+drop procedure if exists obtenerImg;
+DELIMITER //
+CREATE procedure obtenerImg()
+BEGIN
+    select total from imgTotales where id = 1 limit 1;
+    
+END //
+DELIMITER ;
+
+
 drop procedure if exists obtener_un_empleado;
 DELIMITER //
 CREATE procedure obtener_un_empleado(m_id int)
@@ -89,3 +117,17 @@ BEGIN
 END //
 DELIMITER ;
 
+
+
+drop procedure if exists crear_sala;
+DELIMITER &&
+CREATE procedure crear_sala(m_name varchar(255), m_ubicacion varchar(255),m_cupo int, m_image varchar(255), m_id_empresa int)
+BEGIN
+	
+    INSERT INTO sala(name, ubicacion, image, id_empresa, cupo, erased)VALUES (m_name, m_ubicacion, m_image, m_cupo, m_id_empresa, false);
+	
+    SELECT 1 AS completado, last_insert_id() AS id;
+    
+    
+END &&
+DELIMITER ;

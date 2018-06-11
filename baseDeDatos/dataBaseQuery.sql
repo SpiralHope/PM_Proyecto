@@ -29,7 +29,7 @@ CREATE TABLE empleado
     tipo_empleado varchar(255), -- admin, empleado, instructor
     erased BOOLEAN DEFAULT FALSE,
     id_empresa int,
-    FOREIGN KEY (id_empresa) REFERENCES empresa(id)
+    FOREIGN KEY (id_empresa) REFERENCES empresa (id)
 );
 
 
@@ -49,6 +49,7 @@ CREATE TABLE sala
     image VARCHAR(255),
     erased BOOLEAN DEFAULT FALSE,
     id_empresa int,
+    cupo INT(11) NULL DEFAULT 1,
     FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
 

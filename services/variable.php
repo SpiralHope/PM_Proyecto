@@ -19,6 +19,8 @@ error_reporting(E_ERROR | E_PARSE);
 
     session_start();
 
+    
+
     $PATH = ""; //''
 
     $REALPATH = "http://www.workclass.xyz"; //'https://solarium-news.000webhostapp.com'
@@ -777,11 +779,13 @@ $actual = $actual+1;
             
             if(!($type === "jpg" || $type === "jpeg"|| $type === "png" || $type === "mp4")) {
                 
+                return null;
                 die("<h1>ERROR: EL ARCHIVO SELECIONADO NO ES UNA IMAGEN O NO ES COMPATIBLE.</h1><p>Formatos compatibles: .jpg o .png. Tu archivo es: " . $type . "</p>");
             }
 
             //file_get_content
             if(!(move_uploaded_file($_FILES[$name]["tmp_name"], $file))){
+                return null;
                 //echo "<p>No se pudo subir el archivo</p>";
                 die("ERROR: NO HA SELECCIONADO UNA IMAEGN");
             }
@@ -789,6 +793,8 @@ $actual = $actual+1;
             if($returnRealPath){
                 return $file;
             }
+            return $result;
+
             return $GLOBALS["PATH"] . $result;
         }
 
