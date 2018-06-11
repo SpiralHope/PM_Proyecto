@@ -70,6 +70,37 @@
 		    }
 
 	  	}
+
+	  	
+	  	function crearInstructor($nombre, $apellido, $correo, $descripcion, $pass, $id_empresa, $img){
+
+	  		if(!isset($nombre, $apellido, $correo, $descripcion, $pass, $id_empresa, $img) ){
+		        return false;
+		    }
+
+		    $_SQL =  $GLOBALS["_SQL"] ;
+
+		    if( !$_SQL->validateFile($img) ){
+		    	return false;
+		    }
+	
+			$imagen = $_SQL->uploadFile($img);
+			$sha1Password = sha1($pass);
+
+			if($imagen == null)
+				return false;
+
+			$_SQL("CALL registroInstructor(?, ?, ?, ?, ?, ?, ?)", [$nombre, $apellido, $correo, $descripcion, $imagen, $id_empresa, 
+				$sha1Password ], "sssssis");
+		    
+		    $row = $_SQL->getRow(1);
+		    if ($row["completado"] == 1){
+		    	return true;
+		    }
+		    else{
+		    	return false;
+		    }
+	  	}
 	  	
 /*
 	  	function createUser($userData){

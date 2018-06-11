@@ -113,10 +113,11 @@ drop procedure if exists obtener_todas_salas;
 DELIMITER //
 CREATE procedure obtener_todas_salas(m_id_empresa int)
 BEGIN
-	SELECT id, name, ubicacion, image FROM sala WHERE id_empresa = m_id_empresa LIMIT 1;
+	SELECT id, name, ubicacion, image, cupo FROM sala WHERE id_empresa = m_id_empresa;
 END //
 DELIMITER ;
 
+call obtener_todas_salas(1);
 
 
 drop procedure if exists crear_sala;
@@ -124,10 +125,45 @@ DELIMITER &&
 CREATE procedure crear_sala(m_name varchar(255), m_ubicacion varchar(255),m_cupo int, m_image varchar(255), m_id_empresa int)
 BEGIN
 	
-    INSERT INTO sala(name, ubicacion, image, id_empresa, cupo, erased)VALUES (m_name, m_ubicacion, m_image, m_cupo, m_id_empresa, false);
+    INSERT INTO sala(name, ubicacion, image, id_empresa, cupo, erased)VALUES (m_name, m_ubicacion, m_image,  m_id_empresa, m_cupo, false);
 	
     SELECT 1 AS completado, last_insert_id() AS id;
     
     
 END &&
 DELIMITER ;
+
+drop procedure if exists crear_curso;
+DELIMITER &&
+CREATE procedure crear_curso(m_nombre varchar(255), m_fecha date, m_descripcion varchar(255), m_hora_inicio time,  m_hora_fin time,  m_id_sala int, m_id_inst int, m_id_admin int, m_id_empresa int)
+BEGIN
+
+	INSERT INTO curso(	nombre, num_empleados, descripcion_corta, descripcion_larga, dia, hora_inicio, 
+                        hora_fin, completado, id_empresa, id_instructor, id_sala, id_admin)
+			VALUES (	m_nombre, 0, m_descripcion, m_descripcion, m_fecha, m_hora_inicio, 
+						m_hora_fin, false, m_id_empresa, m_id_inst, m_id_sala, m_id_admin);
+    SELECT 1 AS completado, last_insert_id() AS id;
+    
+END &&
+DELIMITER ;
+
+drop procedure if exists eventos_admin;
+DELIMITER //
+CREATE procedure eventos_admin(m_id_empresa int)
+BEGIN
+	SELECT 	curso.nombre as title, curso.num_empleados as numero_empleados, curso.descripcion_corta , curso.dia, curso.hora_inicio, 
+			curso.hora_fin, curso.completado,
+			
+            sala.name as sala_nombre,  sala.ubicacion as sala_ubicacion,  sala.image as sala_imagen,  sala.cupo as sala_cupo,
+            
+            concat(empleado.nombre,' ', empleado.apellido) as instructor_nombre, 
+            empleado.descripcion as instructor_desc, empleado.img as instructor_img
+            
+            FROM curso join sala on sala.id = curso.id_sala join empleado on empleado.id = curso.id_instructor
+            
+            WHERE curso.id_empresa = m_id_empresa;
+END //
+DELIMITER ;
+
+
+

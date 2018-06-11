@@ -228,10 +228,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseExamplePages">
               <li>
-                <a href="login.html">Agregar Empleado</a>
+                <a href="dashboardAdmin_AgregarEmpleado.php">Agregar Empleado</a>
               </li>
               <li>
-                <a href="register.html">Agregar Instructor</a>
+                <a href="dashboardAdmin_AgregarInstructor.php">Agregar Instructor</a>
               </li>
             </ul>
           </li>

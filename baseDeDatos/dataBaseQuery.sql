@@ -158,7 +158,7 @@ DELIMITER ;
 
 drop procedure if exists registroEmpleado;
 DELIMITER //
-CREATE PROCEDURE registroEmpleado(IN m_nombre varchar(255), in m_correo varchar(255),  in m_id_empresa varchar(255) )
+CREATE PROCEDURE registroEmpleado(IN m_nombre varchar(255), in m_correo varchar(255),  in m_id_empresa varchar(255) , IN m_password VARCHAR(255))
 BEGIN
 
 
@@ -167,18 +167,15 @@ BEGIN
 	IF empleado_existe(m_correo) = FALSE THEN
     
 			INSERT INTO empleado(nombre, apellido, correo, password,descripcion, cumple, img, tipo_empleado,id_empresa)
-			VALUES (m_nombre, null, m_correo, null, null, null, null, 'empleado', m_id_empresa);
+			VALUES (m_nombre, null, m_correo, m_password, null, null, null, 'empleado', m_id_empresa);
             
 			Set m_id_empleado =  last_insert_id();
 			
             
-            set m_token = uuid();
-            INSERT INTO restaurar_password(email, token)
-			values (m_correo, m_token);
             
-            SELECT 1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado, m_token as token;
+            SELECT 1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado;
     ELSE
-		 SELECT -1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado, '' as token;
+		 SELECT -1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado;
     END IF;
 
 END //
@@ -186,8 +183,8 @@ END //
 
 drop procedure if exists registroInstructor;
 DELIMITER //
-CREATE PROCEDURE registroInstructor(IN m_nombre VARCHAR(255), IN m_apellido VARCHAR(255), in m_correo varchar(255), in m_cumple date, IN m_descripcion VARCHAR(255), 
-									IN m_img VARCHAR(255), IN id_empresa VARCHAR(255))
+CREATE PROCEDURE registroInstructor(IN m_nombre VARCHAR(255), IN m_apellido VARCHAR(255), in m_correo varchar(255), IN m_descripcion VARCHAR(255), 
+									IN m_img VARCHAR(255), IN id_empresa VARCHAR(255), IN m_password VARCHAR(255))
 BEGIN
 
 
@@ -196,20 +193,18 @@ BEGIN
 	IF empleado_existe(m_correo) = FALSE THEN
     
 			INSERT INTO empleado(nombre, apellido, correo, password,descripcion, cumple, img, tipo_empleado, id_empresa)
-			VALUES (m_nombre, m_apellido, m_correo, null, m_descripcion, m_cumple, m_img, 'instructor', m_id_empresa);
+			VALUES (m_nombre, m_apellido, m_correo, m_password, m_descripcion, null, m_img, 'instructor', m_id_empresa);
             
 			Set m_id_empleado =  last_insert_id();
 			
            
-            set m_token = uuid();
-            INSERT INTO restaurar_password(email, token)
-			values (m_correo, m_token);
             
-            SELECT 1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado, m_token as token;
+            SELECT 1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado;
     ELSE
-		 SELECT -1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado, '' as token;
+		 SELECT -1 AS completado, m_id_empresa as id_empresa, m_id_empleado as id_empleado;
     END IF;
 
 END //
 
 
+call registroInstructor('asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasdasdas', 1, 'asdasdasdasdasd');

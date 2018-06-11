@@ -181,7 +181,7 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-turquesa" id="page-top">
-    
+   
     
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-turquesa fixed-top" id="mainNav">
@@ -378,6 +378,10 @@
 
                   <div class="slideCurso" id="slide1">
                     <form id="slide1Form" role="form" data-toggle="validator">
+                      <div style="display: none">
+                        <input type="texr" name="fecha" id="fecha-input" value="">
+                        <input type="text" class="form-control" id="method" name="_method" data-error="Requerido" data-maxlength="255" autocomplete="off" required hidden value="crear_curso">
+                      </div>
                       <div class="form-group">
                         <label for="nombreCurso">Nombre del curso:</label>
                         <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required tabindex="-1">
@@ -428,7 +432,6 @@
                             <label for="sala">Salas Disponibles</label>
                             <select id="sala" name="sala" autocomplete="off" required tabindex="-1">
                               <option disabled selected value> -- Seleccione una opcion -- </option>
-
                             </select>
                           </div>
                           <div class="col-md-12">
@@ -442,13 +445,13 @@
                     </form>
                   </div>
 
-                    
                   <div class="slideCurso" id="slide3">
-                    <form id="slide3Form">
+                    <form id="slide3Form" role="form" data-toggle="validator">
                       <div class="form-group">
                         <label for="instructor">Instructores </label>
                         <select id="instructor" name="instructor" autocomplete="off" required tabindex="-1">
                           <option disabled selected value> -- Seleccione una opcion -- </option>
+
                         </select>
                       </div>
                       <div class="row">
@@ -509,6 +512,20 @@
         </div>
       </div>
     </div>
+
+    <form style="display: none" id="dummy-form">
+      <input type="text" name="_method" value="obtener_listado_cursos_admin">
+    </form>
+
+    <form style="display: none" id="dummy-form-salas">
+      <input type="text" name="_method" value="obtener_listado_salas">
+    </form>
+
+    <form style="display: none" id="dummy-form-inst">
+      <input type="text" name="_method" value="obtener_listado_instructores">
+    </form>
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -536,7 +553,182 @@
 
     <script type="text/javascript">
 
+      var rootUrl = 'http://www.workclass.xyz';
 
+      var eventos = null;
+
+      var instructores = null;
+
+      var salas = null;
+
+      $('#sala').change(function(event) {
+        /* Act on the event */
+          for(var i = 0; i < salas.length; i++){
+            if(salas[i].id ==  $('#sala').val() ){
+              $('#img-sala').attr('src', salas[i].image);
+              $('#cupo-sala').text(salas[i].cupo);
+              $('#ubi-sala').text(salas[i].ubicacion); 
+            }
+          }
+      });
+
+       $('#instructor').change(function(event) {
+        /* Act on the event */
+          for(var i = 0; i < salas.length; i++){
+            if(instructores[i].id ==  $('#instructor').val() ){
+              $('#img-instructor').attr('src', instructores[i].img);
+              $('#desc-instructor').text(instructores[i].descripcion); 
+            }
+          }
+      });
+
+ 
+
+      function cargarCursos(){
+        var url = rootUrl + "/services/services.php";
+
+        var dataToSend = new FormData(document.forms['dummy-form']); // with the file input
+        $.ajax({
+          type: "POST",
+          url: url,
+          dataType: "json",
+          contentType: false,
+          processData: false,
+          async: false,
+          data: dataToSend, //$("#login-form").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+            console.log(data);
+            if(data.success === true){
+              for(var i = 0; i< data.eventos.length; i++){
+                data.eventos[i].start = $.fullCalendar.moment(data.eventos[i].dia + 'T' + data.eventos[i].hora_inicio); 
+                data.eventos[i].end = $.fullCalendar.moment(data.eventos[i].dia + 'T' + data.eventos[i].hora_fin); 
+              }
+              eventos = data.eventos;
+
+
+              $('#calendar').fullCalendar('removeEvents');
+              $('#calendar').fullCalendar('addEventSource', eventos);         
+              $('#calendar').fullCalendar('rerenderEvents' );
+
+
+              console.log(eventos);
+
+            }else{
+
+            }
+           },
+           error: function(data){
+
+           }
+        }).fail(function( jqXHR, textStatus, errorThrown ) {
+             if(console && console.log){
+              console.log(errorThrown);
+              console.log(textStatus);
+              
+             }
+        }).always(function() {
+          //alert( "complete" );
+
+        });
+
+      };
+
+      function cargarInstructores(){
+        var url = rootUrl + "/services/services.php";
+
+        var dataToSend = new FormData(document.forms['dummy-form-inst']); // with the file input
+        $.ajax({
+          type: "POST",
+          url: url,
+          dataType: "json",
+          contentType: false,
+          processData: false,
+          async: false,
+          data: dataToSend, //$("#login-form").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+            console.log(data);
+            if(data.success === true){
+
+              instructores = data.instructores;
+              console.log(instructores);
+
+                for(var i = 0; i< instructores.length; i++){
+                
+                var options = "<option value='" + data.instructores[i].id + "'>" +data.instructores[i].nombre + "</option>";
+                $('#instructor').append(options);
+              }
+
+            }else{
+
+            }
+           },
+           error: function(data){
+
+           }
+        }).fail(function( jqXHR, textStatus, errorThrown ) {
+             if(console && console.log){
+              console.log(errorThrown);
+              console.log(textStatus);
+              
+             }
+        }).always(function() {
+          //alert( "complete" );
+
+        });
+
+      };
+    cargarInstructores();
+      function cargarSalas(){
+        var url = rootUrl + "/services/services.php";
+
+        var dataToSend = new FormData(document.forms['dummy-form-salas'] ); // with the file input
+        $.ajax({
+          type: "POST",
+          url: url,
+          dataType: "json",
+          contentType: false,
+          processData: false,
+          async: false,
+          data: dataToSend, //$("#login-form").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+            console.log(data);
+            if(data.success === true){
+              salas = data.salas;
+              console.log(salas);
+
+              for(var i = 0; i< salas.length; i++){
+                
+                var options = "<option value='" + data.salas[i].id + "'>" +data.salas[i].name + "</option>";
+                $('#sala').append(options);
+              }
+              
+
+            }else{
+
+            }
+           },
+           error: function(data){
+
+           }
+        }).fail(function( jqXHR, textStatus, errorThrown ) {
+             if(console && console.log){
+              console.log(errorThrown);
+              console.log(textStatus);
+              
+             }
+        }).always(function() {
+          //alert( "complete" );
+
+        });
+
+      };
+
+       cargarSalas();
+
+     
 
       $('#horaIni').timepicker({ 'step': 15, 'timeFormat': 'h:i A', 'minTime': '8:00am', 'maxTime': '11:30pm', 'disableTextInput': true});
       $('#horaFin').timepicker({ 'step': 15, 'timeFormat': 'h:i A', 'minTime': '8:00am', 'maxTime': '11:30pm', 'disableTextInput': true});
@@ -624,6 +816,74 @@
 
           if( $('#slide'+ self.slideActual +'Form').validator('validate').has('.has-error').length > 0){
             openMsgModal('Llene todos los campos!!!');
+            return;
+          }else if( self.slideActual == 3 ){
+            $(mainSel + btn1Sel).prop('disabled', true);
+            $(mainSel + btn2Sel).prop('disabled', true);
+            $(mainSel + btn3Sel).prop('disabled', true);
+
+
+
+            var formData = new FormData(document.forms['slide1Form']); // with the file input
+            var poData = jQuery(document.forms['slide2Form']).serializeArray();
+            for (var i=0; i<poData.length; i++)
+                formData.append(poData[i].name, poData[i].value);
+
+            poData = jQuery(document.forms['slide3Form']).serializeArray();
+            for (var i=0; i<poData.length; i++)
+                formData.append(poData[i].name, poData[i].value);
+            
+            poData = jQuery(document.forms['slide4Form']).serializeArray();
+            for (var i=0; i<poData.length; i++)
+                formData.append(poData[i].name, poData[i].value);
+
+            var dataToSend = formData;
+
+
+            for (var pair of dataToSend.entries()) {
+                console.log(pair[0]+ ', ' + pair[1]); 
+            }
+
+
+             var url = rootUrl + "/services/services.php"
+              $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                async: false,
+                data: dataToSend, //$("#login-form").serialize(), // serializes the form's elements.
+                 success: function(data)
+                 {
+                  console.log(data);
+                  if(data.success === true){
+                    //alert("Se ha creado el curso");
+                    cargarCursos();
+                    self.closeCurso();
+                  }else{
+                    //alert("Error al salir");
+                  }
+                     //alert(data); // show response from the php script.
+                 },
+                 error: function(data){
+
+                 }
+              }).fail(function( jqXHR, textStatus, errorThrown ) {
+                   if(console && console.log){
+                    console.log(errorThrown);
+                    console.log(textStatus);
+                    
+                   }
+              }).always(function() {
+                //alert( "complete" );
+                $(mainSel + btn1Sel).prop('disabled', false);
+                $(mainSel + btn2Sel).prop('disabled', false);
+                $(mainSel + btn3Sel).prop('disabled', false);
+              });
+
+
+
             return;
           }
 
@@ -719,9 +979,15 @@
         }
 
         self.reset  = function(){
+          $(mainSel + btn1Sel).prop('disabled', false);
+          $(mainSel + btn2Sel).prop('disabled', false);
+          $(mainSel + btn3Sel).prop('disabled', false);
+
           $(mainSel + btn2Sel).prop('disabled', true);
 
           $(self.container).animate({left: "=0px", }, 0, self.afterAnim) 
+
+
         }
 
       }
@@ -758,7 +1024,7 @@
 
     <script type="text/javascript">
 
-      var rootUrl = 'http://www.workclass.xyz';
+      
       $('#logoutConfirmButton').click(function(event) {
           event.preventDefault();
 
@@ -817,6 +1083,8 @@
           }
             //$('#calendar').fullCalendar( 'renderEvent', myevent, true);
 
+            $('#fecha-input').val( date.format('YYYY-M-D') );
+
             FormCur.reset(); 
             $(mainSel).modal({
               escapeClose: false,
@@ -828,9 +1096,7 @@
           }
         },
 
-        events: [
-       
-        ],
+        events: eventos,
         eventClick: function(calEvent, jsEvent, view) {
 
           alert('Event: ' + calEvent.title);
@@ -842,7 +1108,9 @@
           }
 
         }
-      })
+      });
+
+       cargarCursos();
 
     </script>
 

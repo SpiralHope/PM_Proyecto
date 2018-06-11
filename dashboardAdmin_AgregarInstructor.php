@@ -330,29 +330,37 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active" id="active-tab">Crear Sala</li>
+        <li class="breadcrumb-item active" id="active-tab">Crear Instructor</li>
       </ol>
-    
 
       <div class="contenedor-formulario">
           <form id="slide1Form" role="form" data-toggle="validator" method="POST" enctype="multipart/form-data" action="/services/services.php">
-            <input type="text" class="form-control" id="method" name="_method" data-error="Requerido" data-maxlength="255" autocomplete="off" required hidden value="crear_sala">
+            <input type="text" class="form-control" id="method" name="_method" data-error="Requerido" data-maxlength="255" autocomplete="off" required hidden value="crear_instructor">
             <div class="form-group">
-              <label for="nombreSala">Sala</label>
-              <input type="text" class="form-control" id="nombreSala" name="nombreSala" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
+              <label for="nombreInst">Nombre: </label>
+              <input type="text" class="form-control" id="nombreInst" name="nombreInst" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-              <label for="descSala">Ubicacion</label>
-              <textarea type="text" class="form-control" id="descSala" name="descSala" data-maxlength="255" data-error="Requerido" autocomplete="off" placeholder="max 255" required></textarea>
+              <label for="apellidoInst">Apellido: </label>
+              <input type="text" class="form-control" id="apellidoInst" name="apellidoInst" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-              <label for="cupo">Cupo</label>
-              <input type="number" class="form-control" id="cupo" name="cupo" data-error="Requerido. Debe ser numerico" data-maxlength="255" autocomplete="off"  placeholder="--" required min="1">
+              <label for="correoInst">Correo: </label>
+              <input type="email" class="form-control" id="correoInst" name="correoInst" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
               <div class="help-block with-errors"></div>
             </div>
-
+            <div class="form-group">
+              <label for="descripcionInst">Descripcion: </label>
+              <input type="text" class="form-control" id="descripcionInst" name="descripcionInst" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="passInst">Contraseña: </label>
+              <input type="text" class="form-control" id="passInst" name="passInst" data-error="Requerido" data-maxlength="255" autocomplete="off"  placeholder="Ingrese el nombre" required>
+              <div class="help-block with-errors"></div>
+            </div>
             <div class="form-group">
               <label for="img">Imagen</label>
               <input id="img" name="img"  data-show-upload="false" type="file" class="file" data-language='es' data-allowed-file-extensions='["jpg", "png"]' autocomplete="off" accept="image/x-png,image/jpeg" required>
